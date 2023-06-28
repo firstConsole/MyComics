@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  MyComics
+
+  Created by Кирилл Копытин on 28.06.2023.
+  
+*/
+
+// MARK: - TabBar
+"charactersTabItem" = "Персонажи";
+"comicsTabItem" = "Комиксы";
+"profileTabItem" = "Профиль";
+
+// MARK: - Alert
+"errorAlertTitle" = "Ошибка";
+"alertCancelAction" = "Отмена";
