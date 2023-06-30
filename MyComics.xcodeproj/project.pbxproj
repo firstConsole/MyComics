@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13B25FD09C35C058856187F3 /* Pods_MyComics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */; };
+		23A8A1412A4C9139007D09FB /* SeriesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A12D2A4C9139007D09FB /* SeriesEntity.swift */; };
 		23A8A1422A4C9139007D09FB /* EventEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A12E2A4C9139007D09FB /* EventEntity.swift */; };
 		23A8A1432A4C9139007D09FB /* CreatorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A12F2A4C9139007D09FB /* CreatorEntity.swift */; };
 		23A8A1442A4C9139007D09FB /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1302A4C9139007D09FB /* CharacterEntity.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23A8A12D2A4C9139007D09FB /* SeriesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesEntity.swift; sourceTree = "<group>"; };
 		23A8A12E2A4C9139007D09FB /* EventEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEntity.swift; sourceTree = "<group>"; };
 		23A8A12F2A4C9139007D09FB /* CreatorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorEntity.swift; sourceTree = "<group>"; };
 		23A8A1302A4C9139007D09FB /* CharacterEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterEntity.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		23A8A12C2A4C9139007D09FB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A12D2A4C9139007D09FB /* SeriesEntity.swift */,
 				23A8A12E2A4C9139007D09FB /* EventEntity.swift */,
 				23A8A12F2A4C9139007D09FB /* CreatorEntity.swift */,
 				23A8A1302A4C9139007D09FB /* CharacterEntity.swift */,
@@ -557,6 +560,7 @@
 				8B72C6BD2A4C832A00BFC6DA /* ComicsPresenter.swift in Sources */,
 				8B72C6AA2A4C805F00BFC6DA /* String+Localizable.swift in Sources */,
 				23A8A1442A4C9139007D09FB /* CharacterEntity.swift in Sources */,
+				23A8A1412A4C9139007D09FB /* SeriesEntity.swift in Sources */,
 				8B72C6D12A4C86E800BFC6DA /* ComicsModuleBuilder.swift in Sources */,
 				8B72C6CE2A4C861400BFC6DA /* ProfileModuleBuilder.swift in Sources */,
 				23A8A1452A4C9139007D09FB /* ComicEntity.swift in Sources */,
