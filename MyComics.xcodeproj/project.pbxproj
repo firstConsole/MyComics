@@ -11,6 +11,7 @@
 		23A8A1392A4C9139007D09FB /* CharactersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1222A4C9139007D09FB /* CharactersAPI.swift */; };
 		23A8A13A2A4C9139007D09FB /* ComicsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1232A4C9139007D09FB /* ComicsAPI.swift */; };
 		23A8A13B2A4C9139007D09FB /* CreatorsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1242A4C9139007D09FB /* CreatorsAPI.swift */; };
+		23A8A13C2A4C9139007D09FB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1262A4C9139007D09FB /* NetworkService.swift */; };
 		23A8A1412A4C9139007D09FB /* SeriesEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A12D2A4C9139007D09FB /* SeriesEntity.swift */; };
 		23A8A1422A4C9139007D09FB /* EventEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A12E2A4C9139007D09FB /* EventEntity.swift */; };
 		23A8A1432A4C9139007D09FB /* CreatorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A12F2A4C9139007D09FB /* CreatorEntity.swift */; };
@@ -63,6 +64,7 @@
 		23A8A1222A4C9139007D09FB /* CharactersAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersAPI.swift; sourceTree = "<group>"; };
 		23A8A1232A4C9139007D09FB /* ComicsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicsAPI.swift; sourceTree = "<group>"; };
 		23A8A1242A4C9139007D09FB /* CreatorsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsAPI.swift; sourceTree = "<group>"; };
+		23A8A1262A4C9139007D09FB /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		23A8A12D2A4C9139007D09FB /* SeriesEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeriesEntity.swift; sourceTree = "<group>"; };
 		23A8A12E2A4C9139007D09FB /* EventEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEntity.swift; sourceTree = "<group>"; };
 		23A8A12F2A4C9139007D09FB /* CreatorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorEntity.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				23A8A16F2A4D5D44007D09FB /* Components */,
+				23A8A1262A4C9139007D09FB /* NetworkService.swift */,
 			);
 			path = "Network Service";
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				23A8A1502A4C9269007D09FB /* EventsAPI.swift in Sources */,
 				8B72C6872A49C77F00BFC6DA /* AppDelegate.swift in Sources */,
 				23A8A1612A4D5C60007D09FB /* ComicsProvidable.swift in Sources */,
+				23A8A13C2A4C9139007D09FB /* NetworkService.swift in Sources */,
 				8B72C6C52A4C848A00BFC6DA /* ComicsViewInput.swift in Sources */,
 				23A8A1392A4C9139007D09FB /* CharactersAPI.swift in Sources */,
 				8B72C6BF2A4C834300BFC6DA /* CharactersPresenter.swift in Sources */,
