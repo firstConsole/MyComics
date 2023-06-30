@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13B25FD09C35C058856187F3 /* Pods_MyComics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */; };
+		23A8A1442A4C9139007D09FB /* CharacterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1302A4C9139007D09FB /* CharacterEntity.swift */; };
 		23A8A1472A4C9139007D09FB /* EntityPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1342A4C9139007D09FB /* EntityPresentable.swift */; };
 		23A8A1482A4C9139007D09FB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1352A4C9139007D09FB /* Image.swift */; };
 		23A8A1492A4C9139007D09FB /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1362A4C9139007D09FB /* List.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23A8A1302A4C9139007D09FB /* CharacterEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterEntity.swift; sourceTree = "<group>"; };
 		23A8A1342A4C9139007D09FB /* EntityPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityPresentable.swift; sourceTree = "<group>"; };
 		23A8A1352A4C9139007D09FB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		23A8A1362A4C9139007D09FB /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		23A8A12C2A4C9139007D09FB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A1302A4C9139007D09FB /* CharacterEntity.swift */,
 				23A8A1332A4C9139007D09FB /* Base */,
 			);
 			path = Entities;
@@ -542,6 +545,7 @@
 				8B72C6B92A4C817C00BFC6DA /* ProfileViewController.swift in Sources */,
 				8B72C6BD2A4C832A00BFC6DA /* ComicsPresenter.swift in Sources */,
 				8B72C6AA2A4C805F00BFC6DA /* String+Localizable.swift in Sources */,
+				23A8A1442A4C9139007D09FB /* CharacterEntity.swift in Sources */,
 				8B72C6D12A4C86E800BFC6DA /* ComicsModuleBuilder.swift in Sources */,
 				8B72C6CE2A4C861400BFC6DA /* ProfileModuleBuilder.swift in Sources */,
 				8B72C6CB2A4C84C800BFC6DA /* ProfileViewOutput.swift in Sources */,
