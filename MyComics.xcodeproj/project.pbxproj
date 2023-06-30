@@ -34,6 +34,7 @@
 		23A8A1692A4D5C93007D09FB /* StoriesProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1682A4D5C93007D09FB /* StoriesProvidable.swift */; };
 		23A8A16B2A4D5CC9007D09FB /* URLComponents + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A16A2A4D5CC9007D09FB /* URLComponents + Extensions.swift */; };
 		23A8A1712A4D5D60007D09FB /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1702A4D5D60007D09FB /* Path.swift */; };
+		23A8A1732A4D5D89007D09FB /* NetworkService + Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1722A4D5D89007D09FB /* NetworkService + Error.swift */; };
 		23A8A17B2A4DD8C5007D09FB /* ContentProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A17A2A4DD8C5007D09FB /* ContentProvidable.swift */; };
 		8B72C6872A49C77F00BFC6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72C6862A49C77F00BFC6DA /* AppDelegate.swift */; };
 		8B72C6902A49C78100BFC6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B72C68F2A49C78100BFC6DA /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		23A8A1682A4D5C93007D09FB /* StoriesProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesProvidable.swift; sourceTree = "<group>"; };
 		23A8A16A2A4D5CC9007D09FB /* URLComponents + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLComponents + Extensions.swift"; sourceTree = "<group>"; };
 		23A8A1702A4D5D60007D09FB /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		23A8A1722A4D5D89007D09FB /* NetworkService + Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkService + Error.swift"; sourceTree = "<group>"; };
 		23A8A17A2A4DD8C5007D09FB /* ContentProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentProvidable.swift; sourceTree = "<group>"; };
 		501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyComics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59040F5E013A45E6238F61F4 /* Pods-MyComics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyComics.debug.xcconfig"; path = "Target Support Files/Pods-MyComics/Pods-MyComics.debug.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				23A8A16F2A4D5D44007D09FB /* Components */,
 				23A8A1262A4C9139007D09FB /* NetworkService.swift */,
+				23A8A1722A4D5D89007D09FB /* NetworkService + Error.swift */,
 			);
 			path = "Network Service";
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				23A8A15C2A4D5B80007D09FB /* StoriesAPI.swift in Sources */,
 				23A8A1442A4C9139007D09FB /* CharacterEntity.swift in Sources */,
 				23A8A1412A4C9139007D09FB /* SeriesEntity.swift in Sources */,
+				23A8A1732A4D5D89007D09FB /* NetworkService + Error.swift in Sources */,
 				8B72C6D12A4C86E800BFC6DA /* ComicsModuleBuilder.swift in Sources */,
 				23A8A15A2A4D5B76007D09FB /* SeriesAPI.swift in Sources */,
 				8B72C6CE2A4C861400BFC6DA /* ProfileModuleBuilder.swift in Sources */,
