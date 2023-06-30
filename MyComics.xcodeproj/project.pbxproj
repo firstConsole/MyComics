@@ -76,6 +76,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23A8A11E2A4C90E8007D09FB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A1202A4C9139007D09FB /* Network Layer */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		23A8A1202A4C9139007D09FB /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A17F2A4E8DA3007D09FB /* Builder */,
+				23A8A17C2A4DEB8F007D09FB /* Extensions */,
+				23A8A16E2A4D5D36007D09FB /* Network Service */,
+				23A8A1512A4D5A4B007D09FB /* Configurator */,
+				23A8A1212A4C9139007D09FB /* PublicAPIs */,
+				23A8A1272A4C9139007D09FB /* ApiServices */,
+				23A8A12C2A4C9139007D09FB /* Entities */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		23A8A1212A4C9139007D09FB /* PublicAPIs */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A15D2A4D5C44007D09FB /* ContentProvidable */,
+			);
+			path = PublicAPIs;
+			sourceTree = "<group>";
+		};
+		23A8A1272A4C9139007D09FB /* ApiServices */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ApiServices;
+			sourceTree = "<group>";
+		};
+		23A8A12C2A4C9139007D09FB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A1332A4C9139007D09FB /* Base */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		23A8A1332A4C9139007D09FB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		23A8A1512A4D5A4B007D09FB /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		23A8A15D2A4D5C44007D09FB /* ContentProvidable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ContentProvidable;
+			sourceTree = "<group>";
+		};
+		23A8A16E2A4D5D36007D09FB /* Network Service */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A16F2A4D5D44007D09FB /* Components */,
+			);
+			path = "Network Service";
+			sourceTree = "<group>";
+		};
+		23A8A16F2A4D5D44007D09FB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		23A8A17C2A4DEB8F007D09FB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		23A8A17F2A4E8DA3007D09FB /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
 		3AC715052CF10FC18193B479 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +201,7 @@
 		8B72C6852A49C77F00BFC6DA /* MyComics */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A11E2A4C90E8007D09FB /* Core */,
 				8B72C69B2A4C7DCB00BFC6DA /* App */,
 				8B72C6A02A4C7E3200BFC6DA /* Coordinators */,
 				8B72C69C2A4C7DF100BFC6DA /* Flows */,
