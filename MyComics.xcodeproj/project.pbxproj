@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13B25FD09C35C058856187F3 /* Pods_MyComics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */; };
+		23A8A1482A4C9139007D09FB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1352A4C9139007D09FB /* Image.swift */; };
 		23A8A1492A4C9139007D09FB /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1362A4C9139007D09FB /* List.swift */; };
 		23A8A14B2A4C9139007D09FB /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1382A4C9139007D09FB /* Url.swift */; };
 		8B72C6872A49C77F00BFC6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72C6862A49C77F00BFC6DA /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23A8A1352A4C9139007D09FB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		23A8A1362A4C9139007D09FB /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		23A8A1382A4C9139007D09FB /* Url.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyComics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 		23A8A1332A4C9139007D09FB /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A1352A4C9139007D09FB /* Image.swift */,
 				23A8A1362A4C9139007D09FB /* List.swift */,
 				23A8A1382A4C9139007D09FB /* Url.swift */,
 			);
@@ -513,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B72C6A32A4C7E5A00BFC6DA /* RootCoordinator.swift in Sources */,
+				23A8A1482A4C9139007D09FB /* Image.swift in Sources */,
 				8B72C6C32A4C844500BFC6DA /* CharactersViewOutput.swift in Sources */,
 				8B72C6B52A4C814900BFC6DA /* CharactersViewController.swift in Sources */,
 				8B72C6C72A4C849700BFC6DA /* ComicsViewOutput.swift in Sources */,
