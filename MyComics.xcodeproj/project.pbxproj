@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13B25FD09C35C058856187F3 /* Pods_MyComics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */; };
+		23A8A1472A4C9139007D09FB /* EntityPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1342A4C9139007D09FB /* EntityPresentable.swift */; };
 		23A8A1482A4C9139007D09FB /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1352A4C9139007D09FB /* Image.swift */; };
 		23A8A1492A4C9139007D09FB /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1362A4C9139007D09FB /* List.swift */; };
 		23A8A14B2A4C9139007D09FB /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1382A4C9139007D09FB /* Url.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23A8A1342A4C9139007D09FB /* EntityPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityPresentable.swift; sourceTree = "<group>"; };
 		23A8A1352A4C9139007D09FB /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		23A8A1362A4C9139007D09FB /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		23A8A1382A4C9139007D09FB /* Url.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		23A8A1332A4C9139007D09FB /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A1342A4C9139007D09FB /* EntityPresentable.swift */,
 				23A8A1352A4C9139007D09FB /* Image.swift */,
 				23A8A1362A4C9139007D09FB /* List.swift */,
 				23A8A1382A4C9139007D09FB /* Url.swift */,
@@ -526,6 +529,7 @@
 				8B72C6AD2A4C809F00BFC6DA /* LocalizationKeys.swift in Sources */,
 				8B72C6D62A4C87D100BFC6DA /* UIViewController+Extension.swift in Sources */,
 				23A8A14B2A4C9139007D09FB /* Url.swift in Sources */,
+				23A8A1472A4C9139007D09FB /* EntityPresentable.swift in Sources */,
 				8B72C6872A49C77F00BFC6DA /* AppDelegate.swift in Sources */,
 				8B72C6C52A4C848A00BFC6DA /* ComicsViewInput.swift in Sources */,
 				8B72C6BF2A4C834300BFC6DA /* CharactersPresenter.swift in Sources */,
