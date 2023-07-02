@@ -51,6 +51,7 @@
 		23A8A1932A518FD3007D09FB /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1922A518FD3007D09FB /* Int + Extensions.swift */; };
 		23A8A1952A518FF0007D09FB /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1942A518FF0007D09FB /* UIColor + Extensions.swift */; };
 		23A8A1972A519007007D09FB /* UIImage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1962A519007007D09FB /* UIImage + Extensions.swift */; };
+		23A8A19C2A51905B007D09FB /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A19B2A51905B007D09FB /* AsyncImageView.swift */; };
 		23A8A19E2A5190CB007D09FB /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A19D2A5190CB007D09FB /* AsyncImage.swift */; };
 		8B72C6872A49C77F00BFC6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72C6862A49C77F00BFC6DA /* AppDelegate.swift */; };
 		8B72C6902A49C78100BFC6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B72C68F2A49C78100BFC6DA /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		23A8A1922A518FD3007D09FB /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
 		23A8A1942A518FF0007D09FB /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		23A8A1962A519007007D09FB /* UIImage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extensions.swift"; sourceTree = "<group>"; };
+		23A8A19B2A51905B007D09FB /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		23A8A19D2A5190CB007D09FB /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyComics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59040F5E013A45E6238F61F4 /* Pods-MyComics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyComics.debug.xcconfig"; path = "Target Support Files/Pods-MyComics/Pods-MyComics.debug.xcconfig"; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		23A8A18C2A518F1E007D09FB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A19B2A51905B007D09FB /* AsyncImageView.swift */,
 				23A8A19D2A5190CB007D09FB /* AsyncImage.swift */,
 			);
 			path = Common;
@@ -718,6 +721,7 @@
 				23A8A13F2A4C9139007D09FB /* DefaultAPIService.swift in Sources */,
 				8B72C6D62A4C87D100BFC6DA /* UIViewController+Extension.swift in Sources */,
 				23A8A1972A519007007D09FB /* UIImage + Extensions.swift in Sources */,
+				23A8A19C2A51905B007D09FB /* AsyncImageView.swift in Sources */,
 				23A8A13E2A4C9139007D09FB /* CharactersAPIService.swift in Sources */,
 				23A8A14B2A4C9139007D09FB /* Url.swift in Sources */,
 				23A8A1712A4D5D60007D09FB /* Path.swift in Sources */,
