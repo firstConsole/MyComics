@@ -13,4 +13,6 @@ enum LocalizationKeys: String {
     case profileTabItem
     case errorAlertTitle
     case alertCancelAction
+    case detailButtonTitle
+    
 }
