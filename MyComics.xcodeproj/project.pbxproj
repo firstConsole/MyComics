@@ -296,12 +296,60 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		23A8A1822A514BF4007D09FB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A1982A519039007D09FB /* ContentView */,
+				23A8A1872A518EB8007D09FB /* Cell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		23A8A1872A518EB8007D09FB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		23A8A18C2A518F1E007D09FB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		23A8A18F2A518FA5007D09FB /* Images Loader */ = {
 			isa = PBXGroup;
 			children = (
 				23A8A1902A518FB0007D09FB /* ImageLoader.swift */,
 			);
 			path = "Images Loader";
+			sourceTree = "<group>";
+		};
+		23A8A1982A519039007D09FB /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		23A8A1A12A5192A1007D09FB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		23A8A1A22A5192A9007D09FB /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A1822A514BF4007D09FB /* Components */,
+				8B72C6D22A4C870300BFC6DA /* Builder */,
+				8B72C6B32A4C812800BFC6DA /* Presenter */,
+				8B72C6B22A4C812400BFC6DA /* View */,
+			);
+			path = MVP;
 			sourceTree = "<group>";
 		};
 		3AC715052CF10FC18193B479 /* Pods */ = {
@@ -366,6 +414,7 @@
 		8B72C69C2A4C7DF100BFC6DA /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A18C2A518F1E007D09FB /* Common */,
 				8B72C69D2A4C7DF800BFC6DA /* Characters */,
 				8B72C69E2A4C7E1A00BFC6DA /* Comics */,
 				8B72C69F2A4C7E1F00BFC6DA /* Profile */,
@@ -376,9 +425,8 @@
 		8B72C69D2A4C7DF800BFC6DA /* Characters */ = {
 			isa = PBXGroup;
 			children = (
-				8B72C6D22A4C870300BFC6DA /* Builder */,
-				8B72C6B32A4C812800BFC6DA /* Presenter */,
-				8B72C6B22A4C812400BFC6DA /* View */,
+				23A8A1A12A5192A1007D09FB /* Data */,
+				23A8A1A22A5192A9007D09FB /* MVP */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
