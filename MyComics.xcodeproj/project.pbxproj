@@ -47,6 +47,7 @@
 		23A8A17B2A4DD8C5007D09FB /* ContentProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A17A2A4DD8C5007D09FB /* ContentProvidable.swift */; };
 		23A8A1812A4E8DB4007D09FB /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1802A4E8DB4007D09FB /* APIBuilder.swift */; };
 		23A8A1862A514E57007D09FB /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1852A514E56007D09FB /* UIView + Extensions.swift */; };
+		23A8A1912A518FB0007D09FB /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1902A518FB0007D09FB /* ImageLoader.swift */; };
 		23A8A1932A518FD3007D09FB /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1922A518FD3007D09FB /* Int + Extensions.swift */; };
 		23A8A1952A518FF0007D09FB /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1942A518FF0007D09FB /* UIColor + Extensions.swift */; };
 		23A8A1972A519007007D09FB /* UIImage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1962A519007007D09FB /* UIImage + Extensions.swift */; };
@@ -115,6 +116,7 @@
 		23A8A17A2A4DD8C5007D09FB /* ContentProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentProvidable.swift; sourceTree = "<group>"; };
 		23A8A1802A4E8DB4007D09FB /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
 		23A8A1852A514E56007D09FB /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
+		23A8A1902A518FB0007D09FB /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		23A8A1922A518FD3007D09FB /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
 		23A8A1942A518FF0007D09FB /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		23A8A1962A519007007D09FB /* UIImage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extensions.swift"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		23A8A11E2A4C90E8007D09FB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A18F2A518FA5007D09FB /* Images Loader */,
 				23A8A1202A4C9139007D09FB /* Network Layer */,
 			);
 			path = Core;
@@ -291,6 +294,14 @@
 				23A8A1802A4E8DB4007D09FB /* APIBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		23A8A18F2A518FA5007D09FB /* Images Loader */ = {
+			isa = PBXGroup;
+			children = (
+				23A8A1902A518FB0007D09FB /* ImageLoader.swift */,
+			);
+			path = "Images Loader";
 			sourceTree = "<group>";
 		};
 		3AC715052CF10FC18193B479 /* Pods */ = {
@@ -670,6 +681,7 @@
 				23A8A1532A4D5A55007D09FB /* APIRequestConfigurator.swift in Sources */,
 				8B72C6C12A4C843700BFC6DA /* CharactersViewInput.swift in Sources */,
 				8B72C6D42A4C871C00BFC6DA /* CharactersModuleBuilder.swift in Sources */,
+				23A8A1912A518FB0007D09FB /* ImageLoader.swift in Sources */,
 				23A8A1632A4D5C6C007D09FB /* EventsProvidable.swift in Sources */,
 				23A8A1652A4D5C78007D09FB /* CreatorsProvidable.swift in Sources */,
 				23A8A17B2A4DD8C5007D09FB /* ContentProvidable.swift in Sources */,
