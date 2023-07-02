@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct AsyncImage: Hashable {
+struct AsyncImage: Hashable, Identifiable {
+    let id: UUID = UUID()
     let imageURL: String?
     let imageExtension: String?
 }
