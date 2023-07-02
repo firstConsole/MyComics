@@ -28,6 +28,8 @@ final class ImageLoader {
     // MARK: - Private Properties
     
     private var session = URLSession.shared
+    private let loadingQueue = DispatchQueue(label: #file, attributes: .concurrent)
+    private var cach: [UUID: UIImage] = [:]
     
     // MARK: - Init
     
@@ -35,28 +37,39 @@ final class ImageLoader {
     
     // MARK: - Public Method
     
+    func getChachedImage(by id: UUID) -> UIImage? {
+        return cach[id]
+    }
+    
     func loadImage(
-        urlString: String?,
-        urlExtension: String?,
+        asyncImage: AsyncImage,
         variant: ImageVariant = .portrait_incredible,
         completion: @escaping (UIImage?) -> Void
     ) {
-        guard let urlString,
-              let urlExtension,
-              let url = URL(string: "\(urlString)/\(variant.rawValue).\(urlExtension)") else {
-            completion(nil)
+        if let image = cach[asyncImage.id] {
+            completion(image)
             return
         }
         
-        let dataTask = session.dataTask(with: url) { data, _, _ in
+        guard let urlString = asyncImage.imageURL,
+              let urlExtension = asyncImage.imageExtension,
+              let url = URL(string: "\(urlString)/\(variant.rawValue).\(urlExtension)") else {
+            completion(.characterPlaceholder)
+            return
+        }
+        
+        let dataTask = session.dataTask(with: url) { [weak self] data, _, _ in
             guard let data = data else {
-                completion(nil)
+                completion(.characterPlaceholder)
                 return
             }
             let image = UIImage(data: data)
+            self?.cach[asyncImage.id] = image
             completion(image)
         }
         
-        dataTask.resume()
+        loadingQueue.async {
+            dataTask.resume()
+        }
     }
 }
