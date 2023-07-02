@@ -12,6 +12,9 @@ final class RootCoordinator {
     private weak var window: UIWindow?
     
     func start(in window: UIWindow) {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .navigationBarGray
+        
         let charactersVC = UINavigationController(rootViewController: CharactersModuleBuilder.build())
         charactersVC.tabBarItem.image = UIImage(systemName: "bubble.left.and.bubble.right")
         charactersVC.tabBarItem.title = LocalizationKeys.localized(.charactersTabItem)
@@ -26,6 +29,15 @@ final class RootCoordinator {
         
         let tabBarVC = UITabBarController()
         tabBarVC.viewControllers = [charactersVC, comicsVC, profileVC]
+        
+        tabBarVC.viewControllers?.forEach {
+            if let navigationController = $0 as? UINavigationController {
+                navigationController.navigationBar.prefersLargeTitles = true
+                navigationController.navigationBar.standardAppearance = appearance
+                navigationController.navigationBar.scrollEdgeAppearance = appearance
+                navigationController.navigationBar.compactAppearance = appearance
+            }
+        }
         
         window.makeKeyAndVisible()
         window.rootViewController = tabBarVC
