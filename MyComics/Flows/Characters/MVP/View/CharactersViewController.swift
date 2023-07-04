@@ -11,7 +11,8 @@ final class CharactersViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var presenter: CharactersViewOutput
+    private let contentView = CharactersContentView()
+    private let presenter: CharactersViewOutput
 
     // MARK: - Init
     
@@ -20,24 +21,31 @@ final class CharactersViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    @available (*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        assertionFailure("init(coder:) has not been implemented")
+        return nil
     }
     
     // MARK: - Lifecycle
     
+    override func loadView() {
+        view = contentView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.backgroundColor = .commonBackground
+        navigationItem.title = LocalizationKeys.localized(.charactersTabItem)
         presenter.viewIsReady()
     }
-
 }
 
 // MARK: - CharactersViewInput
 
 extension CharactersViewController: CharactersViewInput {
-    func showData() {
-        print("Done")
+    func update(models: [CharactersContentView.Model]) {
+        contentView.update(models: models)
     }
     
     func showAlert(with message: String) {
