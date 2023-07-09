@@ -47,9 +47,10 @@ final class NetworkService {
     
     func makeEntitiesRequest<T: EntityPresentable>(
         configuration: Configutation,
+        parameters: [String: String]? = nil,
         completion: @escaping ([T]?) -> Void
     ) {
-        self.makeRequest(configuration: configuration) { result in
+        self.makeRequest(configuration: configuration, parameters: parameters) { result in
             switch result {
             case .success(let data):
                 guard let data else { return }
@@ -65,6 +66,28 @@ final class NetworkService {
             }
         }
     }
+    
+    func makeRequestWithParameters<T: EntityPresentable>(
+        path: Path,
+        _ parameters: RequestParameters,
+        completion: @escaping ([T]?) -> Void
+    ) {
+        let mirror = Mirror(reflecting: parameters)
+        
+        var parametersDictionary: [String: String] = [:]
+        
+        mirror.children.forEach { child in
+            if let label = child.label, let value = child.value as? String {
+                parametersDictionary[label] = value
+            }
+        }
+        
+        makeEntitiesRequest(
+            configuration: .init(initialPath: path),
+            parameters: parametersDictionary,
+            completion: completion
+        )
+    }
 }
 
 // MARK: - Private Methods -
@@ -72,6 +95,7 @@ final class NetworkService {
 private extension NetworkService {
     func makeRequest(
         configuration: Configutation,
+        parameters: [String: String]? = nil,
         completion: @escaping (Result<Data?, Error>) -> Void
     ) {
         let ts = "\(1)"
@@ -83,11 +107,20 @@ private extension NetworkService {
             pathConfiguration: configuration.additionalPath
         )
         
-        urlComponents?.queryItems = [
+        urlComponents?.queryItems = []
+        
+        if let parameters {
+            parameters.forEach { key, value in
+                let item = URLQueryItem(name: key, value: value)
+                urlComponents?.queryItems?.append(item)
+            }
+        }
+        
+        urlComponents?.queryItems?.append(contentsOf: [
             URLQueryItem(name: "ts", value: ts),
             URLQueryItem(name: "apikey", value: publicKey),
             URLQueryItem(name: "hash", value: authHash)
-        ]
+        ])
         
         guard let url = urlComponents?.url else { return }
         
