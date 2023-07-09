@@ -38,4 +38,7 @@ extension CharactersPresenter: CharactersViewOutput {
             }
         }
     }
+    
+    func loadNextPage() {
+    }
 }

@@ -35,13 +35,23 @@ final class CharactersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentView.backgroundColor = .commonBackground
         navigationItem.title = LocalizationKeys.localized(.charactersTabItem)
         presenter.viewIsReady()
+        setupActions()
     }
 }
 
-// MARK: - CharactersViewInput
+// MARK: - Private Methods -
+
+private extension CharactersViewController {
+    func setupActions() {
+        contentView.setOnNextPageAction { [unowned self] in
+            presenter.loadNextPage()
+        }
+    }
+}
+
+// MARK: - CharactersViewInput -
 
 extension CharactersViewController: CharactersViewInput {
     func update(models: [CharactersContentView.Model]) {

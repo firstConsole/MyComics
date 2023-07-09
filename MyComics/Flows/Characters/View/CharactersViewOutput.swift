@@ -9,4 +9,5 @@ import Foundation
 
 protocol CharactersViewOutput: AnyObject {
     func viewIsReady()
+    func loadNextPage()
 }
