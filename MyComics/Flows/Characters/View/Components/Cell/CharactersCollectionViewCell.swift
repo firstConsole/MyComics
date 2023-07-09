@@ -17,6 +17,9 @@ final class CharactersCollectionViewCell: UICollectionViewCell {
     
     private let imageView = AsyncImageView()
     private let titleLabel = UILabel()
+    private let gradientLayer = CAGradientLayer()
+    private let likeButton = UIButton()
+    private var onLikeTapped: EmptyClosure?
     
     // MARK: - Init
     
@@ -43,6 +46,10 @@ final class CharactersCollectionViewCell: UICollectionViewCell {
         imageView.asyncImage = model.image
         titleLabel.text = model.title
     }
+    
+    func setLikeButtonAction(_ action: @escaping EmptyClosure) {
+        onLikeTapped = action
+    }
 }
 
 // MARK: - Private Methods
@@ -54,11 +61,14 @@ private extension CharactersCollectionViewCell {
         addSubviews()
         setupImageView()
         setupTitleLabel()
+        setupLikeButton()
+        addBottomGradient()
     }
     
     func addSubviews() {
         contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(likeButton)
     }
     
     func setupConstraints() {
@@ -68,19 +78,24 @@ private extension CharactersCollectionViewCell {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leftAnchor.constraint(equalTo: leftAnchor),
             imageView.rightAnchor.constraint(equalTo: rightAnchor),
-            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor)
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         // titleLabel
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(lessThanOrEqualTo: imageView.bottomAnchor, constant: 5),
+            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: imageView.bottomAnchor, constant: -20),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.standardCornerInset),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.standardCornerInset)
         ])
         
         // detailStackView
+        likeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            likeButton.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            likeButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -2),
+            likeButton.widthAnchor.constraint(equalToConstant: 40.roundedScale()),
+            likeButton.heightAnchor.constraint(equalToConstant: 40.roundedScale())
         ])
         
         self.subviews.forEach { subviews in
@@ -95,11 +110,33 @@ private extension CharactersCollectionViewCell {
         imageView.contentScaleFactor = 0.5
         imageView.setContentHuggingPriority(.required, for: .vertical)
         imageView.maximumContentSizeCategory = .small
-        imageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     func setupTitleLabel() {
         titleLabel.textColor = .white
         titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 2
+        titleLabel.font = .boldSystemFont(ofSize: 20)
+    }
+    
+    func setupLikeButton() {
+        likeButton.setImage(.likeButton, for: .normal)
+        likeButton.addTarget(self, action: #selector(didTapLikeButton), for: .touchUpInside)
+    }
+    
+    func addBottomGradient() {
+        gradientLayer.colors = [UIColor.black.cgColor, UIColor.black.withAlphaComponent(0).cgColor]
+        gradientLayer.startPoint = .init(x: 0.5, y: 1)
+        gradientLayer.endPoint = .init(x: 0.5, y: 0.5)
+        imageView.layer.addSublayer(gradientLayer)
+        gradientLayer.frame = contentView.bounds
+    }
+}
+
+// MARK: - Private Actions
+
+private extension CharactersCollectionViewCell {
+    @objc func didTapLikeButton() {
+        onLikeTapped?()
     }
 }
