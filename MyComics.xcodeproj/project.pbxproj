@@ -63,6 +63,8 @@
 		23EF14602A5ABF0700289B09 /* RequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF145F2A5ABF0700289B09 /* RequestParameters.swift */; };
 		23EF14622A5ABFF800289B09 /* PageableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF14612A5ABFF800289B09 /* PageableContent.swift */; };
 		23EF14642A5AC36E00289B09 /* LoadingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF14632A5AC36E00289B09 /* LoadingFooterView.swift */; };
+		23EF14672A5AD33100289B09 /* CharactersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF14662A5AD33100289B09 /* CharactersCoordinator.swift */; };
+		23EF14692A5AD33F00289B09 /* CharactersScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF14682A5AD33F00289B09 /* CharactersScreenCoordinator.swift */; };
 		23EF146B2A5AD5A300289B09 /* Collection + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EF146A2A5AD5A300289B09 /* Collection + Extensions.swift */; };
 		8B72C6872A49C77F00BFC6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B72C6862A49C77F00BFC6DA /* AppDelegate.swift */; };
 		8B72C6902A49C78100BFC6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B72C68F2A49C78100BFC6DA /* Assets.xcassets */; };
@@ -145,6 +147,8 @@
 		23EF145F2A5ABF0700289B09 /* RequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameters.swift; sourceTree = "<group>"; };
 		23EF14612A5ABFF800289B09 /* PageableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageableContent.swift; sourceTree = "<group>"; };
 		23EF14632A5AC36E00289B09 /* LoadingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingFooterView.swift; sourceTree = "<group>"; };
+		23EF14662A5AD33100289B09 /* CharactersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCoordinator.swift; sourceTree = "<group>"; };
+		23EF14682A5AD33F00289B09 /* CharactersScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersScreenCoordinator.swift; sourceTree = "<group>"; };
 		23EF146A2A5AD5A300289B09 /* Collection + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection + Extensions.swift"; sourceTree = "<group>"; };
 		501A8C54103E703CD9FA3CC0 /* Pods_MyComics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyComics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59040F5E013A45E6238F61F4 /* Pods-MyComics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyComics.debug.xcconfig"; path = "Target Support Files/Pods-MyComics/Pods-MyComics.debug.xcconfig"; sourceTree = "<group>"; };
@@ -379,6 +383,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		23EF14652A5AD32800289B09 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				23EF14662A5AD33100289B09 /* CharactersCoordinator.swift */,
+				23EF14682A5AD33F00289B09 /* CharactersScreenCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		3AC715052CF10FC18193B479 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +465,7 @@
 		8B72C69D2A4C7DF800BFC6DA /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				23EF14652A5AD32800289B09 /* Coordinator */,
 				8B72C6D22A4C870300BFC6DA /* Builder */,
 				23A8A1A12A5192A1007D09FB /* Model */,
 				8B72C6B32A4C812800BFC6DA /* Presenter */,
@@ -762,9 +776,11 @@
 				23A8A1792A4D5F95007D09FB /* StoriesAPIService.swift in Sources */,
 				23A8A1A62A5192C5007D09FB /* CharactersDataAdapterProtocol.swift in Sources */,
 				23A8A13C2A4C9139007D09FB /* NetworkService.swift in Sources */,
+				23EF14692A5AD33F00289B09 /* CharactersScreenCoordinator.swift in Sources */,
 				23A8A18B2A518EEB007D09FB /* CharactersCollectionViewCell + Model.swift in Sources */,
 				23A8A1842A514C4D007D09FB /* CharactersContentView.swift in Sources */,
 				8B72C6C52A4C848A00BFC6DA /* ComicsViewInput.swift in Sources */,
+				23EF14672A5AD33100289B09 /* CharactersCoordinator.swift in Sources */,
 				23A8A1392A4C9139007D09FB /* CharactersAPI.swift in Sources */,
 				8B72C6BF2A4C834300BFC6DA /* CharactersPresenter.swift in Sources */,
 				23A8A1532A4D5A55007D09FB /* APIRequestConfigurator.swift in Sources */,
