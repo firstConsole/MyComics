@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIImage {
-    static let addButton: UIImage? = checkedImage(name: "add_button")
+    static let likeButton: UIImage? = checkedImage(name: "like_button")
     static let characterPlaceholder: UIImage? = checkedImage(name: "placeholder_image")
     
     private static func checkedImage(name: String) -> UIImage? {
