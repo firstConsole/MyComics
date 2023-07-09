@@ -9,4 +9,5 @@ import Foundation
 
 protocol CharactersDataAdapterProtocol {
     func getData(completion: @escaping ([CharacterPresentableModel]) -> Void)
+    func getNextPageData(completion: @escaping ([CharacterPresentableModel]) -> Void)
 }
