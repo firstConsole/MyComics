@@ -40,4 +40,10 @@ final class CharactersAPIService: DefaultAPIService<CharacterEntity>, Characters
     func getStories(by id: String, completion: @escaping ([StoryEntity]?) -> Void) {
         makeConcreteContentRequest(by: id, additionalPath: .stories, completion: completion)
     }
+    
+    // MARK: - SearchAPI
+    
+    func loadNextPage(completion: @escaping ([CharacterEntity]?) -> Void) {
+        makeLoadNextPageRequest(completion: completion)
+    }
 }
