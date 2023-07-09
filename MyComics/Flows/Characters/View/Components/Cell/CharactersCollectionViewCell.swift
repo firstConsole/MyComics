@@ -17,7 +17,6 @@ final class CharactersCollectionViewCell: UICollectionViewCell {
     
     private let imageView = AsyncImageView()
     private let titleLabel = UILabel()
-    private let detailStackView = DetailStackView()
     
     // MARK: - Init
     
@@ -60,7 +59,6 @@ private extension CharactersCollectionViewCell {
     func addSubviews() {
         contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)
-        contentView.addSubview(detailStackView)
     }
     
     func setupConstraints() {
@@ -82,12 +80,7 @@ private extension CharactersCollectionViewCell {
         ])
         
         // detailStackView
-        detailStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            detailStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 14),
-            detailStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.standardCornerInset),
-            detailStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -Constants.standardCornerInset),
-            detailStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -9)
         ])
         
         self.subviews.forEach { subviews in
