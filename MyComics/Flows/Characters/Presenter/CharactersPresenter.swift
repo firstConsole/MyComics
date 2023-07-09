@@ -61,5 +61,7 @@ extension CharactersPresenter: CharactersViewOutput {
     }
     
     func didTapCell(_ indexPath: IndexPath) {
+        guard let characterID = dataAdapter.getCharacterID(by: indexPath) else { return }
+        coordinator.openDetailScreen(characterID: characterID)
     }
 }

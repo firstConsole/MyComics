@@ -37,6 +37,11 @@ final class CharactersDataAdapter: CharactersDataAdapterProtocol {
             self?.processLoadedContent(rawData: rawData, completion: completion)
         }
     }
+    
+    func getCharacterID(by indexPath: IndexPath) -> Int? {
+        guard let entity = entities[safe: indexPath.item] else { return nil }
+        return entity.id
+    }
 }
 
 // MARK: - Private Methods
