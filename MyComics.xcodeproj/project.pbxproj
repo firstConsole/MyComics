@@ -361,13 +361,13 @@
 			path = ContentView;
 			sourceTree = "<group>";
 		};
-		23A8A1A12A5192A1007D09FB /* Data */ = {
+		23A8A1A12A5192A1007D09FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				23A8A1A32A5192BD007D09FB /* CharactersDataAdapter.swift */,
 				23A8A1A52A5192C5007D09FB /* CharactersDataAdapterProtocol.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3AC715052CF10FC18193B479 /* Pods */ = {
@@ -444,9 +444,9 @@
 			isa = PBXGroup;
 			children = (
 				8B72C6D22A4C870300BFC6DA /* Builder */,
+				23A8A1A12A5192A1007D09FB /* Model */,
 				8B72C6B32A4C812800BFC6DA /* Presenter */,
 				8B72C6B22A4C812400BFC6DA /* View */,
-				23A8A1A12A5192A1007D09FB /* Data */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
