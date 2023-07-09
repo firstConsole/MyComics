@@ -370,17 +370,6 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		23A8A1A22A5192A9007D09FB /* MVP */ = {
-			isa = PBXGroup;
-			children = (
-				23A8A1822A514BF4007D09FB /* Components */,
-				8B72C6D22A4C870300BFC6DA /* Builder */,
-				8B72C6B32A4C812800BFC6DA /* Presenter */,
-				8B72C6B22A4C812400BFC6DA /* View */,
-			);
-			path = MVP;
-			sourceTree = "<group>";
-		};
 		3AC715052CF10FC18193B479 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,8 +443,11 @@
 		8B72C69D2A4C7DF800BFC6DA /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				23A8A1822A514BF4007D09FB /* Components */,
+				8B72C6D22A4C870300BFC6DA /* Builder */,
+				8B72C6B32A4C812800BFC6DA /* Presenter */,
+				8B72C6B22A4C812400BFC6DA /* View */,
 				23A8A1A12A5192A1007D09FB /* Data */,
-				23A8A1A22A5192A9007D09FB /* MVP */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
