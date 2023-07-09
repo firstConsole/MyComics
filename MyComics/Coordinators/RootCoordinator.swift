@@ -15,9 +15,11 @@ final class RootCoordinator {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = .navigationBarGray
         
-        let charactersVC = UINavigationController(rootViewController: CharactersModuleBuilder.build())
-        charactersVC.tabBarItem.image = UIImage(systemName: "bubble.left.and.bubble.right")
-        charactersVC.tabBarItem.title = LocalizationKeys.localized(.charactersTabItem)
+        let charactersNavigationController = UINavigationController()
+        let charactersViewController = CharactersModuleBuilder.build(charactersNavigationController)
+        charactersNavigationController.pushViewController(charactersViewController, animated: false)
+        charactersNavigationController.tabBarItem.image = UIImage(systemName: "bubble.left.and.bubble.right")
+        charactersNavigationController.tabBarItem.title = LocalizationKeys.localized(.charactersTabItem)
         
         let comicsVC = UINavigationController(rootViewController: ComicsModuleBuilder.build())
         comicsVC.tabBarItem.image = UIImage(systemName: "person.circle")
@@ -28,7 +30,7 @@ final class RootCoordinator {
         profileVC.tabBarItem.title = LocalizationKeys.localized(.profileTabItem)
         
         let tabBarVC = UITabBarController()
-        tabBarVC.viewControllers = [charactersVC, comicsVC, profileVC]
+        tabBarVC.viewControllers = [charactersNavigationController, comicsVC, profileVC]
         
         tabBarVC.viewControllers?.forEach {
             if let navigationController = $0 as? UINavigationController {

@@ -15,11 +15,14 @@ final class CharactersPresenter {
     
     // MARK: - Dependencies
     
+    private let coordinator: CharactersCoordinator
     private let dataAdapter: CharactersDataAdapterProtocol
     
     // MARK: - Init
     
-    init(dataAdapter: CharactersDataAdapterProtocol) {
+    init(coordinator: CharactersCoordinator,
+         dataAdapter: CharactersDataAdapterProtocol) {
+        self.coordinator = coordinator
         self.dataAdapter = dataAdapter
     }
 }

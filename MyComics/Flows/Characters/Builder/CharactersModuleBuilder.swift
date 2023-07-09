@@ -8,12 +8,15 @@
 import UIKit
 
 final class CharactersModuleBuilder {
-    
-    static func build() -> UIViewController {
+    static func build(_ navigationController: UINavigationController?) -> UIViewController {
         let requestConfigurator = APIRequestConfigurator<CharacterEntity>(networkService: .init())
         let charactersAPI = CharactersAPIService(apiRequestConfigurator: requestConfigurator)
         let dataAdapter = CharactersDataAdapter(charactersAPI: charactersAPI)
-        let presenter = CharactersPresenter(dataAdapter: dataAdapter)
+        let coordinator = CharactersScreenCoordinator(navigationController: navigationController)
+        let presenter = CharactersPresenter(
+            coordinator: coordinator,
+            dataAdapter: dataAdapter
+        )
         let viewController = CharactersViewController(presenter: presenter)
         presenter.view = viewController
         return viewController
