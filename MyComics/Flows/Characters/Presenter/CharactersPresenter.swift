@@ -24,22 +24,26 @@ final class CharactersPresenter {
     }
 }
 
-// MARK: - CharactersViewOutput -
+// MARK: - Private Methods -
 
-extension CharactersPresenter: CharactersViewOutput {
-    func viewIsReady() {
-        dataAdapter.getData { [weak self] models in
-            self?.updateView(with: models)
-        }
-    }
-    
-    private func updateView(with models: [CharacterPresentableModel]) {
+private extension CharactersPresenter {
+    func updateView(with models: [CharacterPresentableModel]) {
         let models: [CharactersContentView.Model] = models.map {
             .init(title: $0.title, image: $0.image)
         }
         
         DispatchQueue.main.async { [weak self] in
             self?.view?.update(models: models)
+        }
+    }
+}
+
+// MARK: - CharactersViewOutput -
+
+extension CharactersPresenter: CharactersViewOutput {
+    func viewIsReady() {
+        dataAdapter.getData { [weak self] models in
+            self?.updateView(with: models)
         }
     }
     
