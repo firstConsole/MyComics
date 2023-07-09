@@ -550,7 +550,6 @@
 			children = (
 				23A8A1822A514BF4007D09FB /* Components */,
 				8B72C6B42A4C814900BFC6DA /* CharactersViewController.swift */,
-				8B72C6C02A4C843700BFC6DA /* CharactersViewInput.swift */,
 				8B72C6C22A4C844500BFC6DA /* CharactersViewOutput.swift */,
 			);
 			path = View;
@@ -559,6 +558,7 @@
 		8B72C6B32A4C812800BFC6DA /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8B72C6C02A4C843700BFC6DA /* CharactersViewInput.swift */,
 				8B72C6BE2A4C834300BFC6DA /* CharactersPresenter.swift */,
 				23A8A19F2A51927A007D09FB /* CharacterPresentableModel.swift */,
 			);
