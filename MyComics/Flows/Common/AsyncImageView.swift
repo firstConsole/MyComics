@@ -25,8 +25,7 @@ final class AsyncImageView: UIImageView {
                 _asyncImage = newValue
                 loadImage()
             } else {
-                self.image = imageLoader.getChachedImage(by: _asyncImage?.id ?? .init())
-                _asyncImage = nil
+                self.image = imageLoader.getChachedImage(by: _asyncImage?.id ?? .init()) ?? .characterPlaceholder
             }
         }
     }
