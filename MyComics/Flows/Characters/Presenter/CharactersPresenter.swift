@@ -52,4 +52,11 @@ extension CharactersPresenter: CharactersViewOutput {
             self?.updateView(with: models)
         }
     }
+    
+    func didTapLike(_ indexPath: IndexPath) {
+        // TODO: 4.9 implement logic
+    }
+    
+    func didTapCell(_ indexPath: IndexPath) {
+    }
 }

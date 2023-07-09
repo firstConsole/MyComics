@@ -48,6 +48,14 @@ private extension CharactersViewController {
         contentView.setOnNextPageAction { [unowned self] in
             presenter.loadNextPage()
         }
+        
+        contentView.setOnCellTapAction { [unowned self] indexPath in
+            presenter.didTapCell(indexPath)
+        }
+        
+        contentView.setOnLikeTapAction { [unowned self] indexPath in
+            presenter.didTapLike(indexPath)
+        }
     }
 }
 

@@ -10,4 +10,6 @@ import Foundation
 protocol CharactersViewOutput: AnyObject {
     func viewIsReady()
     func loadNextPage()
+    func didTapLike(_ indexPath: IndexPath)
+    func didTapCell(_ indexPath: IndexPath)
 }
