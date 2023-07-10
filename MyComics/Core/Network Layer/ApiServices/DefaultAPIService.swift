@@ -7,9 +7,17 @@
 
 import Foundation
 
+// MARK: - Constants
+
+private enum Constants {
+    static var pageLimit = 20
+}
+
 class DefaultAPIService<T: EntityPresentable> {
     
     // MARK: - Public Properties
+    
+    var currentPageOffset: Int = 0
     
     var initialPath: Path {
         fatalError("Should be overriden")
@@ -46,6 +54,16 @@ class DefaultAPIService<T: EntityPresentable> {
             path: initialPath,
             id: id,
             additionalPath: additionalPath,
+            completion: completion
+        )
+    }
+    
+    func makeLoadNextPageRequest(completion: @escaping ([T]?) -> Void) {
+        currentPageOffset += Constants.pageLimit
+        apiRequestConfigurator.requestNextPage(
+            path: initialPath,
+            offset: currentPageOffset,
+            pageLimit: Constants.pageLimit,
             completion: completion
         )
     }

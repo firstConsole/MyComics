@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias EmptyClosure = () -> Void
+
 final class CharactersContentView: UICollectionView {
     
     private enum Section {
@@ -18,6 +20,8 @@ final class CharactersContentView: UICollectionView {
     // MARK: - Private Properties
     
     private lazy var diffableDataSource: DataSourceType = makeDiffableDataSource()
+    private let bottomRefresher = UIRefreshControl()
+    private var loadNextPageAction: EmptyClosure?
     
     // MARK: - Init
 
@@ -42,6 +46,10 @@ final class CharactersContentView: UICollectionView {
         diffableDataSource.apply(snapshot, animatingDifferences: false)
         invalidateIntrinsicContentSize()
     }
+    
+    func setOnNextPageAction(_ action: @escaping EmptyClosure) {
+        loadNextPageAction = action
+    }
 }
 
 // MARK: - Private Methods
@@ -50,6 +58,11 @@ private extension CharactersContentView {
     func setupUI() {
         backgroundColor = .commonBackground
         register(CharactersCollectionViewCell.self, forCellWithReuseIdentifier: CharactersCollectionViewCell.identifier)
+        register(
+            LoadingFooterView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: LoadingFooterView.identifier
+        )
     }
 
     private func makeDiffableDataSource() -> DataSourceType {
@@ -63,6 +76,17 @@ private extension CharactersContentView {
             cell.sizeToFit()
             
             return cell
+        }
+        
+        diffableDataSource.supplementaryViewProvider = { [weak self] collection, _, indexPath in
+            guard let footerView = collection.dequeueReusableSupplementaryView(
+                ofKind: UICollectionView.elementKindSectionFooter,
+                withReuseIdentifier: LoadingFooterView.identifier,
+                for: indexPath
+            ) as? LoadingFooterView else { return nil }
+            footerView.startRefreshing()
+            self?.loadNextPageAction?()
+            return footerView
         }
         
         return diffableDataSource
@@ -95,6 +119,14 @@ private extension CharactersContentView {
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 19
         section.contentInsets = .init(top: 19, leading: 0, bottom: 19, trailing: 0)
+        
+        let footerView = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)),
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
+        
+        section.boundarySupplementaryItems = [footerView]
 
         // Layout
         let layout = UICollectionViewCompositionalLayout(section: section)

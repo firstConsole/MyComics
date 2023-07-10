@@ -35,7 +35,6 @@ final class CharactersCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.asyncImage = nil
         titleLabel.text = ""
     }
     

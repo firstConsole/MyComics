@@ -39,4 +39,14 @@ final class APIRequestConfigurator<T: EntityPresentable> {
         
         networkService.makeEntitiesRequest(configuration: configuration, completion: completion)
     }
+    
+    func requestNextPage<U: EntityPresentable>(
+        path: Path,
+        offset: Int,
+        pageLimit: Int,
+        completion: @escaping ([U]?) -> Void
+    ) {
+        let parameters: RequestParameters = .init(offset: offset, limit: pageLimit)
+        networkService.makeRequestWithParameters(path: path, parameters, completion: completion)
+    }
 }
