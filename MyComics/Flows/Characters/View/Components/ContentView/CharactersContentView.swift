@@ -8,6 +8,7 @@
 import UIKit
 
 typealias EmptyClosure = () -> Void
+typealias IndexPathClosure = (IndexPath) -> Void
 
 final class CharactersContentView: UICollectionView {
     
@@ -22,6 +23,8 @@ final class CharactersContentView: UICollectionView {
     private lazy var diffableDataSource: DataSourceType = makeDiffableDataSource()
     private let bottomRefresher = UIRefreshControl()
     private var loadNextPageAction: EmptyClosure?
+    private var didTapLike: IndexPathClosure?
+    private var didTapCell: IndexPathClosure?
     
     // MARK: - Init
 
@@ -50,12 +53,21 @@ final class CharactersContentView: UICollectionView {
     func setOnNextPageAction(_ action: @escaping EmptyClosure) {
         loadNextPageAction = action
     }
+    
+    func setOnLikeTapAction(_ action: @escaping IndexPathClosure) {
+        didTapLike = action
+    }
+    
+    func setOnCellTapAction(_ action: @escaping IndexPathClosure) {
+        didTapCell = action
+    }
 }
 
 // MARK: - Private Methods
 
 private extension CharactersContentView {
     func setupUI() {
+        delegate = self
         backgroundColor = .commonBackground
         register(CharactersCollectionViewCell.self, forCellWithReuseIdentifier: CharactersCollectionViewCell.identifier)
         register(
@@ -73,6 +85,9 @@ private extension CharactersContentView {
             ) as? CharactersCollectionViewCell else { return UICollectionViewCell() }
             
             cell.configure(model)
+            cell.setLikeButtonAction { [weak self] in
+                self?.didTapLike?(indexPath)
+            }
             cell.sizeToFit()
             
             return cell
@@ -131,5 +146,13 @@ private extension CharactersContentView {
         // Layout
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
+    }
+}
+
+// MARK: - UICollectionViewDelegate -
+
+extension CharactersContentView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didTapCell?(indexPath)
     }
 }

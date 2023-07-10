@@ -11,6 +11,7 @@ final class CharactersDataAdapter: CharactersDataAdapterProtocol {
     
     // MARK: - Private Properties
     
+    private var entities: [CharacterEntity] = []
     private var models: [CharacterPresentableModel] = []
     
     // MARK: - Dependencies
@@ -26,33 +27,40 @@ final class CharactersDataAdapter: CharactersDataAdapterProtocol {
     // MARK: - Public Methods
     
     func getData(completion: @escaping ([CharacterPresentableModel]) -> Void) {
-        charactersAPI.getAllContent { [weak self] rowData in
-            guard let rowData, let self else {
-                completion([])
-                return
-            }
-            let models = self.setupModels(rowData: rowData)
-            completion(models)
+        charactersAPI.getAllContent { [weak self] rawData in
+            self?.processLoadedContent(rawData: rawData, completion: completion)
         }
     }
     
     func getNextPageData(completion: @escaping ([CharacterPresentableModel]) -> Void) {
-        charactersAPI.loadNextPage { [weak self] rowData in
-            guard let rowData, let self else {
-                completion(self?.models ?? [])
-                return
-            }
-            let models = self.setupModels(rowData: rowData)
-            completion(models)
+        charactersAPI.loadNextPage { [weak self] rawData in
+            self?.processLoadedContent(rawData: rawData, completion: completion)
         }
+    }
+    
+    func getCharacterID(by indexPath: IndexPath) -> Int? {
+        guard let entity = entities[safe: indexPath.item] else { return nil }
+        return entity.id
     }
 }
 
 // MARK: - Private Methods
 
 private extension CharactersDataAdapter {
-    func setupModels(rowData: [CharacterEntity]) -> [CharacterPresentableModel] {
-        let configuredModels: [CharacterPresentableModel] = rowData.compactMap { data in
+    func processLoadedContent(
+        rawData: [CharacterEntity]?,
+        completion: @escaping ([CharacterPresentableModel]) -> Void
+    ) {
+        guard let rawData else {
+            completion(models)
+            return
+        }
+        let models = setupModels(rawData: rawData)
+        completion(models)
+    }
+    
+    func setupModels(rawData: [CharacterEntity]) -> [CharacterPresentableModel] {
+        let configuredModels: [CharacterPresentableModel] = rawData.compactMap { data in
             return CharacterPresentableModel(
                 title: data.name ?? "",
                 image: .init(
@@ -62,6 +70,7 @@ private extension CharactersDataAdapter {
             )
         }
         
+        entities.append(contentsOf: rawData)
         models.append(contentsOf: configuredModels)
         return models
     }

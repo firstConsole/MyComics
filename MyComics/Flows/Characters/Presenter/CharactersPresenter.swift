@@ -15,11 +15,14 @@ final class CharactersPresenter {
     
     // MARK: - Dependencies
     
+    private let coordinator: CharactersCoordinator
     private let dataAdapter: CharactersDataAdapterProtocol
     
     // MARK: - Init
     
-    init(dataAdapter: CharactersDataAdapterProtocol) {
+    init(coordinator: CharactersCoordinator,
+         dataAdapter: CharactersDataAdapterProtocol) {
+        self.coordinator = coordinator
         self.dataAdapter = dataAdapter
     }
 }
@@ -51,5 +54,14 @@ extension CharactersPresenter: CharactersViewOutput {
         dataAdapter.getNextPageData { [weak self] models in
             self?.updateView(with: models)
         }
+    }
+    
+    func didTapLike(_ indexPath: IndexPath) {
+        // TODO: 4.9 implement logic
+    }
+    
+    func didTapCell(_ indexPath: IndexPath) {
+        guard let characterID = dataAdapter.getCharacterID(by: indexPath) else { return }
+        coordinator.openDetailScreen(characterID: characterID)
     }
 }
