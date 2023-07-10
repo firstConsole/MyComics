@@ -68,7 +68,7 @@ final class DetailCharacterViewController: UIViewController {
         
         characterImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            characterImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            characterImageView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             characterImageView.leftAnchor.constraint(equalTo: view.leftAnchor),
             characterImageView.rightAnchor.constraint(equalTo: view.rightAnchor),
             characterImageView.heightAnchor.constraint(equalTo: characterImageView.widthAnchor)
