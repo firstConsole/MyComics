@@ -22,7 +22,8 @@ final class CharactersScreenCoordinator: CharactersCoordinator {
     // MARK: - CharactersCoordinator
     
     func openDetailScreen(characterID: Int) {
-        let viewController = UIViewController()
+        let viewController = DetailCharacterModuleBuilder.build()
         navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 }
