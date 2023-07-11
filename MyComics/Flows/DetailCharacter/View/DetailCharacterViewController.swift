@@ -36,6 +36,13 @@ final class DetailCharacterViewController: UIViewController {
         return descriptionLabel
     }()
     
+    private let likeBarButtonItem: UIBarButtonItem = {
+        let likeBarButtonItem = UIBarButtonItem()
+        likeBarButtonItem.image = UIImage(systemName: "heart.fill")
+        likeBarButtonItem.tintColor = UIColor(named: "custom_red")
+        return likeBarButtonItem
+    }()
+    
     // MARK: - Init
     
     init(presenter: DetailCharacterViewOutput) {
@@ -59,6 +66,7 @@ final class DetailCharacterViewController: UIViewController {
     
     private func configureUI() {
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = likeBarButtonItem
         view.backgroundColor = .commonBackground
         view.addSubview(descriptionLabel)
         view.addSubview(nameCharacterLabel)
