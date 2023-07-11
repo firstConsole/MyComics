@@ -11,12 +11,15 @@ final class DetailCharacterViewController: UIViewController {
     
     // MARK: - Properties
     
-    private var presenter: DetailCharacterViewOutput
+    private let presenter: DetailCharacterViewOutput
     
-    private lazy var image = UIImage(named: "characterImage")
-    private lazy var characterImageView = UIImageView(image: image)
+    private let characterImageView: UIImageView = {
+        let characterImageView = UIImageView(image: .characterPlaceholder)
+        characterImageView.contentMode = .scaleAspectFit
+        return characterImageView
+    }()
     
-    private lazy var nameCharacterLabel: UILabel = {
+    private let nameCharacterLabel: UILabel = {
         let nameCharacterLabel = UILabel()
         nameCharacterLabel.text = "Name"
         nameCharacterLabel.textColor = .white
@@ -24,7 +27,7 @@ final class DetailCharacterViewController: UIViewController {
         return nameCharacterLabel
     }()
     
-    private lazy var descriptionLabel: UILabel = {
+    private let descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
         descriptionLabel.text = "Герой американских комиксов Marvel Comics, обладающий сверхспособностями: силой, ловкостью, легкость"
         descriptionLabel.textColor = .white
@@ -55,12 +58,12 @@ final class DetailCharacterViewController: UIViewController {
     // MARK: - Private methods
     
     private func configureUI() {
+        navigationItem.largeTitleDisplayMode = .never
         view.backgroundColor = .commonBackground
         view.addSubview(descriptionLabel)
         view.addSubview(nameCharacterLabel)
         view.addSubview(characterImageView)
         setupConstraints()
-        setupImageView()
     }
     
     private func setupConstraints() {
@@ -87,11 +90,6 @@ final class DetailCharacterViewController: UIViewController {
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
-    }
-    
-    private func setupImageView() {
-        characterImageView.translatesAutoresizingMaskIntoConstraints = false
-        characterImageView.contentMode = .scaleAspectFit
     }
 }
 
