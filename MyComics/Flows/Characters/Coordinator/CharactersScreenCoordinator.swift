@@ -24,6 +24,5 @@ final class CharactersScreenCoordinator: CharactersCoordinator {
     func openDetailScreen(characterID: Int) {
         let viewController = DetailCharacterModuleBuilder.build()
         navigationController?.pushViewController(viewController, animated: true)
-        navigationController?.navigationBar.prefersLargeTitles = false
     }
 }
