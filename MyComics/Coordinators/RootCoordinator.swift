@@ -16,6 +16,7 @@ final class RootCoordinator {
         appearance.backgroundColor = .navigationBarGray
         
         let charactersNavigationController = UINavigationController()
+        
         let charactersViewController = CharactersModuleBuilder.build(charactersNavigationController)
         charactersNavigationController.pushViewController(charactersViewController, animated: false)
         charactersNavigationController.tabBarItem.image = UIImage(systemName: "bubble.left.and.bubble.right")
