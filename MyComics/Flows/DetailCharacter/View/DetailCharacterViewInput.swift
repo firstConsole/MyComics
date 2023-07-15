@@ -8,6 +8,5 @@
 import Foundation
 
 protocol DetailCharacterViewInput: AnyObject {
-    func showData()
-    func showAlert(with message: String)
+    func updateView(model: DetailCharacterModel)
 }
