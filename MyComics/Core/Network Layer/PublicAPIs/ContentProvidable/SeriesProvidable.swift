@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SeriesProvidable {
-    func getSeries(by id: String, completion: @escaping ([SeriesEntity]?) -> Void)
+    func getSeries(by id: Int, completion: @escaping ([SeriesEntity]?) -> Void)
 }

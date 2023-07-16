@@ -8,5 +8,5 @@
 import Foundation
 
 protocol EventsProvidable {
-    func getEvents(by id: String, completion: @escaping ([EventEntity]?) -> Void)
+    func getEvents(by id: Int, completion: @escaping ([EventEntity]?) -> Void)
 }

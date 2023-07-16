@@ -28,7 +28,7 @@ final class DetailCharacterPresenter {
     // MARK: - Private methods
     
     private func loadCharacter() {
-        characterAPIService.getContent(by: String(id)) { [weak self] character in
+        characterAPIService.getContent(by: id) { [weak self] character in
             let model = DetailCharacterModel(id: character?.id,
                                              name: character?.name,
                                              description: character?.description,

@@ -23,7 +23,7 @@ final class APIRequestConfigurator<T: EntityPresentable> {
     
     func requestEntities<U: EntityPresentable>(
         path: Path,
-        id: String? = nil,
+        id: Int? = nil,
         additionalPath: Path? = nil,
         completion: @escaping ([U]?) -> Void
     ) {
