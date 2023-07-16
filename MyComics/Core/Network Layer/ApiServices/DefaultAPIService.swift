@@ -39,14 +39,14 @@ class DefaultAPIService<T: EntityPresentable> {
         apiRequestConfigurator.requestEntities(path: initialPath, completion: completion)
     }
     
-    func makeContentRequest(by id: String, completion: @escaping (T?) -> Void) {
+    func makeContentRequest(by id: Int, completion: @escaping (T?) -> Void) {
         apiRequestConfigurator.requestEntities(path: initialPath, id: id) { entities in
             completion(entities?.first)
         }
     }
     
     func makeConcreteContentRequest<U: EntityPresentable>(
-        by id: String,
+        by id: Int,
         additionalPath: Path,
         completion: @escaping ([U]?) -> Void
     ) {

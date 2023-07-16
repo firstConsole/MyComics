@@ -8,15 +8,16 @@
 import Foundation
 
 final class APIBuilder {
-
+    
+    static let shared = APIBuilder()
     // MARK: - Private Properties
     
     private let networkService: NetworkService
     
     // MARK: - Init
     
-    init(networkService: NetworkService) {
-        self.networkService = networkService
+    private init() {
+        self.networkService = .init()
     }
 
     func makeSeriesAPI() -> any SeriesAPI {

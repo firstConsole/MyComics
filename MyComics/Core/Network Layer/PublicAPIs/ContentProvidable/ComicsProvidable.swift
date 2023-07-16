@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ComicsProvidable {
-    func getComics(by id: String, completion: @escaping ([ComicEntity]?) -> Void)
+    func getComics(by id: Int, completion: @escaping ([ComicEntity]?) -> Void)
 }
