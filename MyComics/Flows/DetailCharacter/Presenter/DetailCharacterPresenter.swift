@@ -16,11 +16,11 @@ final class DetailCharacterPresenter {
     
     // MARK: - Dependency
     
-    private let characterAPIService: CharactersAPIService
+    private let characterAPIService: any CharactersAPI
     
     // MARK: - Init
     
-    init(id: Int, characterAPIService: CharactersAPIService) {
+    init(id: Int, characterAPIService: any CharactersAPI) {
         self.id = id
         self.characterAPIService = characterAPIService
     }
@@ -29,11 +29,15 @@ final class DetailCharacterPresenter {
     
     private func loadCharacter() {
         characterAPIService.getContent(by: id) { [weak self] character in
-            let model = DetailCharacterModel(id: character?.id,
-                                             name: character?.name,
-                                             description: character?.description,
-                                             image: AsyncImage(imageURL: character?.thumbnail?.path,
-                                                               imageExtension: character?.thumbnail?.extension))
+            let model = DetailCharacterModel(
+                id: character?.id,
+                name: character?.name,
+                description: character?.description,
+                image: AsyncImage(
+                    imageURL: character?.thumbnail?.path,
+                    imageExtension: character?.thumbnail?.extension
+                )
+            )
             DispatchQueue.main.async {
                 self?.view?.updateView(model: model)
             }
