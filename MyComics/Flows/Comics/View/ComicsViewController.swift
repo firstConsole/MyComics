@@ -8,10 +8,12 @@
 import UIKit
 
 final class ComicsViewController: UIViewController {
-
+    
     // MARK: - Properties
     
     private var presenter: ComicsViewOutput
+    private let contentView = ComicsContentView()
+    private let searchController = UISearchController()
 
     // MARK: - Init
     
@@ -29,14 +31,21 @@ final class ComicsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewIsReady()
+        navigationItem.title = LocalizationKeys.localized(.comicsTabItem)
+        view.backgroundColor = .commonBackground
+        navigationItem.searchController = searchController
+    }
+    
+    override func loadView() {
+        view = contentView
     }
 }
 
 // MARK: - ComicsViewInput
 
 extension ComicsViewController: ComicsViewInput {
-    func showData() {
-        print("Done")
+    func update(models: [ComicsContentView.Model]) {
+        contentView.update(models: models)
     }
     
     func showAlert(with message: String) {

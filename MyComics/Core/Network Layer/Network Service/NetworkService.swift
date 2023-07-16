@@ -7,10 +7,8 @@
 
 import Foundation
 
-#warning("Setup your public key and delete the warning")
-private let publicKey = ""
-#warning("Setup your private key and delete the warning")
-private let privateKey = ""
+private let publicKey = "e512c5d3f86c175cfcf3cea2738a223d"
+private let privateKey = "38b6c1f37369bc24131e68f77085105b21951a11"
                                                                                
 final class NetworkService {
     
