@@ -13,27 +13,34 @@ final class DetailCharacterViewController: UIViewController {
     
     private let presenter: DetailCharacterViewOutput
     
-    private let characterImageView: UIImageView = {
-        let characterImageView = UIImageView(image: .characterPlaceholder)
+    private let characterImageView: AsyncImageView = {
+        let characterImageView = AsyncImageView()
         characterImageView.contentMode = .scaleAspectFit
         return characterImageView
     }()
     
-    private let nameCharacterLabel: UILabel = {
+    private var nameCharacterLabel: UILabel = {
         let nameCharacterLabel = UILabel()
-        nameCharacterLabel.text = "Name"
         nameCharacterLabel.textColor = .white
+        nameCharacterLabel.font = .systemFont(ofSize: 23, weight: .bold)
         nameCharacterLabel.textAlignment = .center
         return nameCharacterLabel
     }()
     
     private let descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.text = "Герой американских комиксов Marvel Comics, обладающий сверхспособностями: силой, ловкостью, легкость"
         descriptionLabel.textColor = .white
         descriptionLabel.textAlignment = .center
+        descriptionLabel.font = .systemFont(ofSize: 17, weight: .light)
         descriptionLabel.numberOfLines = 10
         return descriptionLabel
+    }()
+    
+    private let likeBarButtonItem: UIBarButtonItem = {
+        let likeBarButtonItem = UIBarButtonItem()
+        likeBarButtonItem.image = UIImage(systemName: "heart.fill")
+        likeBarButtonItem.tintColor = UIColor(named: "custom_red")
+        return likeBarButtonItem
     }()
     
     // MARK: - Init
@@ -59,6 +66,7 @@ final class DetailCharacterViewController: UIViewController {
     
     private func configureUI() {
         navigationItem.largeTitleDisplayMode = .never
+        navigationItem.rightBarButtonItem = likeBarButtonItem
         view.backgroundColor = .commonBackground
         view.addSubview(descriptionLabel)
         view.addSubview(nameCharacterLabel)
@@ -79,7 +87,7 @@ final class DetailCharacterViewController: UIViewController {
         
         nameCharacterLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            nameCharacterLabel.topAnchor.constraint(equalTo: characterImageView.bottomAnchor),
+            nameCharacterLabel.topAnchor.constraint(equalTo: characterImageView.bottomAnchor, constant: 20),
             nameCharacterLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameCharacterLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
@@ -93,12 +101,12 @@ final class DetailCharacterViewController: UIViewController {
     }
 }
 
+// MARK: - DetailCharacterViewInput -
+
 extension DetailCharacterViewController: DetailCharacterViewInput {
-    func showData() {
-        print("Done")
-    }
-    
-    func showAlert(with message: String) {
-        showError(message: message)
+    func updateView(model: DetailCharacterModel) {
+        nameCharacterLabel.text = model.name
+        descriptionLabel.text = model.description
+        characterImageView.asyncImage = model.image
     }
 }

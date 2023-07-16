@@ -22,7 +22,7 @@ final class CharactersScreenCoordinator: CharactersCoordinator {
     // MARK: - CharactersCoordinator
     
     func openDetailScreen(characterID: Int) {
-        let viewController = DetailCharacterModuleBuilder.build()
+        let viewController = DetailCharacterModuleBuilder.build(characterID: characterID)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
