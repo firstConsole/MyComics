@@ -11,6 +11,8 @@
 		2347CC012A63F6F8003CB1CE /* EmptyPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347CC002A63F6F8003CB1CE /* EmptyPlaceholderView.swift */; };
 		2347CC032A63F718003CB1CE /* EmptyPlaceholderView + Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347CC022A63F718003CB1CE /* EmptyPlaceholderView + Model.swift */; };
 		2347CC052A63F77A003CB1CE /* SearchableContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347CC042A63F77A003CB1CE /* SearchableContent.swift */; };
+		2347CC082A63F82B003CB1CE /* CharactersSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347CC072A63F82B003CB1CE /* CharactersSearchController.swift */; };
+		2347CC0A2A63F84F003CB1CE /* CharactersSearchControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2347CC092A63F84F003CB1CE /* CharactersSearchControllerDelegate.swift */; };
 		23A8A1392A4C9139007D09FB /* CharactersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1222A4C9139007D09FB /* CharactersAPI.swift */; };
 		23A8A13A2A4C9139007D09FB /* ComicsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1232A4C9139007D09FB /* ComicsAPI.swift */; };
 		23A8A13B2A4C9139007D09FB /* CreatorsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A8A1242A4C9139007D09FB /* CreatorsAPI.swift */; };
@@ -104,6 +106,8 @@
 		2347CC002A63F6F8003CB1CE /* EmptyPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyPlaceholderView.swift; sourceTree = "<group>"; };
 		2347CC022A63F718003CB1CE /* EmptyPlaceholderView + Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptyPlaceholderView + Model.swift"; sourceTree = "<group>"; };
 		2347CC042A63F77A003CB1CE /* SearchableContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableContent.swift; sourceTree = "<group>"; };
+		2347CC072A63F82B003CB1CE /* CharactersSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersSearchController.swift; sourceTree = "<group>"; };
+		2347CC092A63F84F003CB1CE /* CharactersSearchControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersSearchControllerDelegate.swift; sourceTree = "<group>"; };
 		23A8A1222A4C9139007D09FB /* CharactersAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersAPI.swift; sourceTree = "<group>"; };
 		23A8A1232A4C9139007D09FB /* ComicsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicsAPI.swift; sourceTree = "<group>"; };
 		23A8A1242A4C9139007D09FB /* CreatorsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatorsAPI.swift; sourceTree = "<group>"; };
@@ -217,6 +221,15 @@
 				2347CC022A63F718003CB1CE /* EmptyPlaceholderView + Model.swift */,
 			);
 			path = "Empty Placeholder";
+			sourceTree = "<group>";
+		};
+		2347CC062A63F823003CB1CE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2347CC072A63F82B003CB1CE /* CharactersSearchController.swift */,
+				2347CC092A63F84F003CB1CE /* CharactersSearchControllerDelegate.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		23A8A11E2A4C90E8007D09FB /* Core */ = {
@@ -359,6 +372,7 @@
 		23A8A1822A514BF4007D09FB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2347CC062A63F823003CB1CE /* Search */,
 				23A8A1982A519039007D09FB /* ContentView */,
 				23A8A1872A518EB8007D09FB /* Cell */,
 			);
@@ -812,6 +826,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23A8A19E2A5190CB007D09FB /* AsyncImage.swift in Sources */,
+				2347CC0A2A63F84F003CB1CE /* CharactersSearchControllerDelegate.swift in Sources */,
 				23A8A1A42A5192BD007D09FB /* CharactersDataAdapter.swift in Sources */,
 				8B72C6A32A4C7E5A00BFC6DA /* RootCoordinator.swift in Sources */,
 				23A8A1482A4C9139007D09FB /* Image.swift in Sources */,
@@ -885,6 +900,7 @@
 				8B72C6AA2A4C805F00BFC6DA /* String+Localizable.swift in Sources */,
 				23A8A13B2A4C9139007D09FB /* CreatorsAPI.swift in Sources */,
 				23A8A15C2A4D5B80007D09FB /* StoriesAPI.swift in Sources */,
+				2347CC082A63F82B003CB1CE /* CharactersSearchController.swift in Sources */,
 				23A8A1442A4C9139007D09FB /* CharacterEntity.swift in Sources */,
 				23A8A1412A4C9139007D09FB /* SeriesEntity.swift in Sources */,
 				23A8A1732A4D5D89007D09FB /* NetworkService + Error.swift in Sources */,

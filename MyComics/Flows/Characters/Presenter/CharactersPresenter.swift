@@ -13,6 +13,10 @@ final class CharactersPresenter {
     
     weak var view: CharactersViewInput?
     
+    // MARK: - Private Properties
+    
+    private var isSearching = false
+    
     // MARK: - Dependencies
     
     private let coordinator: CharactersCoordinator
@@ -44,6 +48,29 @@ private extension CharactersPresenter {
 // MARK: - CharactersViewOutput -
 
 extension CharactersPresenter: CharactersViewOutput {
+    func searchTextDidChange(_ text: String) {
+        dataAdapter.getCharactersForText(text) { [weak self] models in
+            self?.isSearching = !text.isEmpty
+            DispatchQueue.main.async {
+                if models.isEmpty && !text.isEmpty {
+                    self?.view?.showEmptySearchPlaceholder()
+                } else {
+                    self?.view?.removeEmptySearchPlaceholder()
+                }
+            }
+            self?.updateView(with: models)
+        }
+    }
+    
+    func cancelButtonClicked() {
+        self.isSearching = false
+        DispatchQueue.main.async { [weak self] in
+            self?.view?.removeEmptySearchPlaceholder()
+            let loadedModels = self?.dataAdapter.getLoadedContent() ?? []
+            self?.updateView(with: loadedModels)
+        }
+    }
+    
     func viewIsReady() {
         dataAdapter.getData { [weak self] models in
             self?.updateView(with: models)
@@ -51,6 +78,7 @@ extension CharactersPresenter: CharactersViewOutput {
     }
     
     func loadNextPage() {
+        guard isSearching == false else { return }
         dataAdapter.getNextPageData { [weak self] models in
             self?.updateView(with: models)
         }
@@ -61,7 +89,7 @@ extension CharactersPresenter: CharactersViewOutput {
     }
     
     func didTapCell(_ indexPath: IndexPath) {
-        guard let characterID = dataAdapter.getCharacterID(by: indexPath) else { return }
+        guard let characterID = dataAdapter.getCharacterID(by: indexPath, isSearching: isSearching) else { return }
         coordinator.openDetailScreen(characterID: characterID)
     }
 }
