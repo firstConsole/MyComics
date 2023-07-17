@@ -13,6 +13,7 @@ final class CharactersDataAdapter: CharactersDataAdapterProtocol {
     
     private var entities: [CharacterEntity] = []
     private var models: [CharacterPresentableModel] = []
+    private var searchEntities: [CharacterEntity] = []
     
     // MARK: - Dependencies
     
@@ -38,9 +39,23 @@ final class CharactersDataAdapter: CharactersDataAdapterProtocol {
         }
     }
     
-    func getCharacterID(by indexPath: IndexPath) -> Int? {
+    func getCharactersForText(
+        _ text: String,
+        completion: @escaping ([CharacterPresentableModel]) -> Void
+    ) {
+        charactersAPI.searchContentWith(text: text) { [weak self] rawData in
+            self?.processSearchContent(rawData: rawData, completion: completion)
+        }
+    }
+    
+    func getCharacterID(by indexPath: IndexPath, isSearching: Bool) -> Int? {
+        let entities = isSearching ? searchEntities : self.entities
         guard let entity = entities[safe: indexPath.item] else { return nil }
         return entity.id
+    }
+    
+    func getLoadedContent() -> [CharacterPresentableModel] {
+        return models
     }
 }
 
@@ -59,19 +74,34 @@ private extension CharactersDataAdapter {
         completion(models)
     }
     
-    func setupModels(rawData: [CharacterEntity]) -> [CharacterPresentableModel] {
-        let configuredModels: [CharacterPresentableModel] = rawData.compactMap { data in
-            return CharacterPresentableModel(
-                title: data.name ?? "",
-                image: .init(
-                    imageURL: data.thumbnail?.path,
-                    imageExtension: data.thumbnail?.extension
-                )
-            )
+    func processSearchContent(
+        rawData: [CharacterEntity]?,
+        completion: @escaping ([CharacterPresentableModel]) -> Void
+    ) {
+        self.searchEntities = rawData ?? []
+        guard let rawData else {
+            completion([])
+            return
         }
+        let models = rawData.map { makeModel(from: $0) }
+        completion(models)
+    }
+    
+    func setupModels(rawData: [CharacterEntity]) -> [CharacterPresentableModel] {
+        let configuredModels: [CharacterPresentableModel] = rawData.map { makeModel(from: $0) }
         
         entities.append(contentsOf: rawData)
         models.append(contentsOf: configuredModels)
         return models
+    }
+    
+    func makeModel(from entity: CharacterEntity) -> CharacterPresentableModel {
+        return CharacterPresentableModel(
+            title: entity.name ?? "",
+            image: .init(
+                imageURL: entity.thumbnail?.path,
+                imageExtension: entity.thumbnail?.extension
+            )
+        )
     }
 }

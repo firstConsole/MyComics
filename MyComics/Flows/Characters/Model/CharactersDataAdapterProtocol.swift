@@ -10,5 +10,7 @@ import Foundation
 protocol CharactersDataAdapterProtocol {
     func getData(completion: @escaping ([CharacterPresentableModel]) -> Void)
     func getNextPageData(completion: @escaping ([CharacterPresentableModel]) -> Void)
-    func getCharacterID(by indexPath: IndexPath) -> Int?
+    func getCharactersForText(_ text: String, completion: @escaping ([CharacterPresentableModel]) -> Void)
+    func getCharacterID(by indexPath: IndexPath, isSearching: Bool) -> Int?
+    func getLoadedContent() -> [CharacterPresentableModel] 
 }

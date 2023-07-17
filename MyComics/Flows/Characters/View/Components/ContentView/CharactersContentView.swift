@@ -20,8 +20,15 @@ final class CharactersContentView: UICollectionView {
     
     // MARK: - Private Properties
     
+    private lazy var emptySearchPlaceholderView = EmptyPlaceholderView(
+        model: .init(
+            image: .searchImage,
+            title: "There no characters found",
+            subtitle: "Check you search text or try again"
+        )
+    )
+    
     private lazy var diffableDataSource: DataSourceType = makeDiffableDataSource()
-    private let bottomRefresher = UIRefreshControl()
     private var loadNextPageAction: EmptyClosure?
     private var didTapLike: IndexPathClosure?
     private var didTapCell: IndexPathClosure?
@@ -61,6 +68,17 @@ final class CharactersContentView: UICollectionView {
     func setOnCellTapAction(_ action: @escaping IndexPathClosure) {
         didTapCell = action
     }
+    
+    func showEmptySearchPlaceholder() {
+        emptySearchPlaceholderView.isHidden = false
+        emptySearchPlaceholderView.frame = self.frame
+        isScrollEnabled = false
+    }
+    
+    func removeEmptySearchPlaceholder() {
+        emptySearchPlaceholderView.isHidden = true
+        isScrollEnabled = true
+    }
 }
 
 // MARK: - Private Methods
@@ -75,6 +93,8 @@ private extension CharactersContentView {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
             withReuseIdentifier: LoadingFooterView.identifier
         )
+        addSubview(emptySearchPlaceholderView)
+        emptySearchPlaceholderView.isHidden = true
     }
 
     private func makeDiffableDataSource() -> DataSourceType {
@@ -99,7 +119,6 @@ private extension CharactersContentView {
                 withReuseIdentifier: LoadingFooterView.identifier,
                 for: indexPath
             ) as? LoadingFooterView else { return nil }
-            footerView.startRefreshing()
             self?.loadNextPageAction?()
             return footerView
         }

@@ -41,9 +41,15 @@ final class CharactersAPIService: DefaultAPIService<CharacterEntity>, Characters
         makeConcreteContentRequest(by: id, additionalPath: .stories, completion: completion)
     }
     
-    // MARK: - SearchAPI
+    // MARK: - PagableContent
     
     func loadNextPage(completion: @escaping ([CharacterEntity]?) -> Void) {
         makeLoadNextPageRequest(completion: completion)
+    }
+    
+    // MARK: - SearchableContent
+    
+    func searchContentWith(text: String, completion: @escaping ([CharacterEntity]?) -> Void) {
+        makeSearchRequest(text: text, completion: completion)
     }
 }
