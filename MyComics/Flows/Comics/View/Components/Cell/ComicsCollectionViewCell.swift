@@ -17,6 +17,7 @@ final class ComicsCollectionViewCell: UICollectionViewCell {
     private var gradientView = UIView()
     private var likeButton = UIButton()
     private var identifier = "ComicsCollectionViewCell"
+    var data: [Model] = []
     
     // MARK: - Init
     
@@ -82,7 +83,16 @@ private extension ComicsCollectionViewCell {
         likeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             likeButton.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            likeButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)
+            likeButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
+            likeButton.widthAnchor.constraint(equalToConstant: 40),
+            likeButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: imageView.bottomAnchor, constant: -20),
+            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)
         ])
     }
     
@@ -95,10 +105,7 @@ private extension ComicsCollectionViewCell {
     }
     
     func setupLikeButton() {
-        likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        likeButton.backgroundColor = .white
-        likeButton.tintColor = .appTintRed
-        likeButton.layer.cornerRadius = 10
+        likeButton.setImage(.likeButton, for: .normal)
     }
     
     func setupTitleLabel() {
@@ -119,7 +126,9 @@ private extension ComicsCollectionViewCell {
         let gradientLayer = CAGradientLayer()
 
         gradientView.frame = contentView.frame
-        gradientLayer.colors = [UIColor.white.cgColor.alpha, UIColor.black.cgColor]
+        gradientLayer.colors = [UIColor.white.cgColor.alpha,
+                                UIColor.gray.cgColor.alpha,
+                                UIColor.black.withAlphaComponent(0.9).cgColor]
         gradientLayer.frame.size = gradientView.frame.size
 
         return gradientLayer
@@ -129,9 +138,9 @@ private extension ComicsCollectionViewCell {
 // MARK: - Public extension
 
 extension ComicsCollectionViewCell {
-    func configureCell(model: Model) {
-        titleLabel.text = model.title
-        authorLabel.text = model.author
-        imageView.asyncImage = model.image
+    func configureCell(model: [Model], indexPath: IndexPath) {
+        imageView.asyncImage = model[indexPath.row].image
+        titleLabel.text = model[indexPath.row].title
+        authorLabel.text = model[indexPath.row].author
     }
 }

@@ -34,12 +34,18 @@ private extension ComicsPresenter {
                   image: $0.image)
         }
         
+        print("(ComicsPresenter): Items updated complete = \(models.count)")
+        
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {
                 return
             }
             
-            self.view?.update(models: models)
+            if models.isEmpty {
+                self.view?.showAlert(with: "No comics data loaded")
+            } else {
+                self.view?.update(models: models)
+            }
         }
     }
 }
@@ -52,6 +58,8 @@ extension ComicsPresenter: ComicsViewOutput {
             guard let self = self else {
                 return
             }
+            
+            print("(ComicsPresenter): Items updated complete with \(models.count) items")
             
             self.updateView(with: models)
         }

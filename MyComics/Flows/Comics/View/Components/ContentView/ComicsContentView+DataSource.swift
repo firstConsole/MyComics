@@ -9,7 +9,7 @@ import UIKit
 
 extension ComicsContentView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return comicsData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -19,7 +19,9 @@ extension ComicsContentView: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.configureCell(model: data)
+        cell.configureCell(model: comicsData, indexPath: indexPath)
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
         
         return cell
     }

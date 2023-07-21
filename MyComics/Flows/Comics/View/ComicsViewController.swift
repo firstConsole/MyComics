@@ -30,10 +30,7 @@ final class ComicsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewIsReady()
-        navigationItem.title = LocalizationKeys.localized(.comicsTabItem)
-        view.backgroundColor = .commonBackground
-        navigationItem.searchController = searchController
+        setupUI()
     }
     
     override func loadView() {
@@ -46,9 +43,22 @@ final class ComicsViewController: UIViewController {
 extension ComicsViewController: ComicsViewInput {
     func update(models: [ComicsContentView.Model]) {
         contentView.update(models: models)
+        contentView.comicsData = contentView.convertData(models: models)
+        contentView.reloadData()
     }
     
     func showAlert(with message: String) {
         showError(message: message)
+    }
+}
+
+// MARK: - Private methods
+
+private extension ComicsViewController {
+    func setupUI() {
+        presenter.viewIsReady()
+        navigationItem.title = LocalizationKeys.localized(.comicsTabItem)
+        view.backgroundColor = .commonBackground
+        navigationItem.searchController = searchController
     }
 }
