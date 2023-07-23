@@ -1,27 +1,26 @@
 //
-//  ProfileModuleBuilder.swift
+//  AuthModuleBuilder.swift
 //  MyComics
 //
-//  Created by Кирилл Копытин on 28.06.2023.
+//  Created by Кирилл Копытин on 23.07.2023.
 //
 
 import UIKit
 
-final class ProfileModuleBuilder {
-    
+final class AuthModuleBuilder {
     static func build(_ navigationController: UINavigationController?) -> UIViewController {
         let authService = AuthService()
         let databaseService = DatabaseService()
-        let coordinator = ProfileCoordinator(navigationController: navigationController)
+        let coordinator = AuthCoordinator(navigationController: navigationController)
         let userDefaultsService = UserDefaultsService()
-
-        let presenter = ProfilePresenter(
+        
+        let presenter = AuthPresenter(
             authService: authService,
             databaseService: databaseService,
             coordinator: coordinator,
             userDefaultsService: userDefaultsService
         )
-        let vc = ProfileViewController(presenter: presenter)
+        let vc = AuthViewController(presenter: presenter)
         presenter.view = vc
         
         return vc
