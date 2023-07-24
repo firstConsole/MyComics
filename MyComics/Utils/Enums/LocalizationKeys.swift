@@ -13,4 +13,9 @@ enum LocalizationKeys: String {
     case profileTabItem
     case errorAlertTitle
     case alertCancelAction
+    case detailButtonTitle
+    
+    static func localized(_ type: Self) -> String {
+        return type.rawValue.localized
+    }
 }

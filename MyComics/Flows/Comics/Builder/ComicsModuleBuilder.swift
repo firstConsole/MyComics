@@ -10,9 +10,14 @@ import UIKit
 final class ComicsModuleBuilder {
     
     static func build() -> UIViewController {
-        let presenter = ComicsPresenter()
-        let vc = ComicsViewController(presenter: presenter)
-        presenter.view = vc
-        return vc
+        let requestConfigurator = APIRequestConfigurator<ComicEntity>(networkService: .init())
+        let comicsAPI = ComicsAPIService(apiRequestConfigurator: requestConfigurator)
+        let dataAdapter = ComicsDataAdapter(comicsAPI: comicsAPI)
+        let presenter = ComicsPresenter(
+            dataAdapter: dataAdapter
+        )
+        let comicsViewController = ComicsViewController(presenter: presenter)
+        presenter.view = comicsViewController
+        return comicsViewController
     }
 }
