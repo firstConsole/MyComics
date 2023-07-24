@@ -908,6 +908,10 @@
 			isa = PBXGroup;
 			children = (
 				CE4BA9402A61797A00B3D9AE /* DetailCharacterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BB1B45FF2A600599005C551A /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -1110,6 +1114,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				23A8A19E2A5190CB007D09FB /* AsyncImage.swift in Sources */,
+				BB1B460A2A60313A005C551A /* ComicsContentView+DataSource.swift in Sources */,
+				2347CC0A2A63F84F003CB1CE /* CharactersSearchControllerDelegate.swift in Sources */,
 				2347CC0A2A63F84F003CB1CE /* CharactersSearchControllerDelegate.swift in Sources */,
 				BB1B460A2A60313A005C551A /* ComicsContentView+DataSource.swift in Sources */,
 				23A8A1A42A5192BD007D09FB /* CharactersDataAdapter.swift in Sources */,
