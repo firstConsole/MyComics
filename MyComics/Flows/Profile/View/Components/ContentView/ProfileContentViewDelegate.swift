@@ -1,14 +1,13 @@
 //
-//  ProfileViewOutput.swift
+//  ProfileContentViewDelegate.swift
 //  MyComics
 //
-//  Created by Кирилл Копытин on 28.06.2023.
+//  Created by Кирилл Копытин on 23.07.2023.
 //
 
 import Foundation
 
-protocol ProfileViewOutput: AnyObject {
-    func viewIsReady()
+protocol ProfileContentViewDelegate: AnyObject {
     func logoutButtonPressed()
     func favoriteCharactersButtonPressed()
     func readComicsButtonPressed()
