@@ -8,5 +8,5 @@
 import Foundation
 
 protocol StoriesProvidable {
-    func getStories(by id: String, completion: @escaping ([StoryEntity]?) -> Void)
+    func getStories(by id: Int, completion: @escaping ([StoryEntity]?) -> Void)
 }

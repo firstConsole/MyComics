@@ -12,6 +12,7 @@ final class CharactersViewController: UIViewController {
     // MARK: - Properties
     
     private let contentView = CharactersContentView()
+    private let searchController = CharactersSearchController(searchResultsController: nil)
     private let presenter: CharactersViewOutput
 
     // MARK: - Init
@@ -36,6 +37,9 @@ final class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = LocalizationKeys.localized(.charactersTabItem)
+        navigationItem.searchController = searchController
+        searchController.customSearchDelegate = self
+        navigationItem.hidesSearchBarWhenScrolling = false
         presenter.viewIsReady()
         setupActions()
     }
@@ -66,7 +70,21 @@ extension CharactersViewController: CharactersViewInput {
         contentView.update(models: models)
     }
     
-    func showAlert(with message: String) {
-        showError(message: message)
+    func showEmptySearchPlaceholder() {
+        contentView.showEmptySearchPlaceholder()
+    }
+    
+    func removeEmptySearchPlaceholder() {
+        contentView.removeEmptySearchPlaceholder()
+    }
+}
+
+extension CharactersViewController: CharactersSearchControllerDelegate {
+    func textDidChange(_ text: String) {
+        presenter.searchTextDidChange(text)
+    }
+    
+    func cancelButtonClicked() {
+        presenter.cancelButtonClicked()
     }
 }

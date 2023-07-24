@@ -10,6 +10,7 @@ import UIKit
 extension UIImage {
     static let likeButton: UIImage? = checkedImage(name: "like_button")
     static let characterPlaceholder: UIImage? = checkedImage(name: "placeholder_image")
+    static let searchImage: UIImage? = UIImage(systemName: "magnifyingglass")
     
     private static func checkedImage(name: String) -> UIImage? {
         guard let image = UIImage(named: name) else {

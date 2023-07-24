@@ -35,18 +35,20 @@ class DefaultAPIService<T: EntityPresentable> {
     
     // MARK: - Public Methods
     
-    func makeAllContentRequest(completion: @escaping ([T]?) -> Void) {
+    func makeAllContentRequest(
+        completion: @escaping ([T]?) -> Void
+    ) {
         apiRequestConfigurator.requestEntities(path: initialPath, completion: completion)
     }
     
-    func makeContentRequest(by id: String, completion: @escaping (T?) -> Void) {
+    func makeContentRequest(by id: Int, completion: @escaping (T?) -> Void) {
         apiRequestConfigurator.requestEntities(path: initialPath, id: id) { entities in
             completion(entities?.first)
         }
     }
     
     func makeConcreteContentRequest<U: EntityPresentable>(
-        by id: String,
+        by id: Int,
         additionalPath: Path,
         completion: @escaping ([U]?) -> Void
     ) {
@@ -66,5 +68,9 @@ class DefaultAPIService<T: EntityPresentable> {
             pageLimit: Constants.pageLimit,
             completion: completion
         )
+    }
+    
+    func makeSearchRequest(text: String, completion: @escaping ([T]?) -> Void) {
+        apiRequestConfigurator.requestSearchContent(path: initialPath, text: text, completion: completion)
     }
 }
