@@ -10,5 +10,5 @@ import Foundation
 protocol ContentProvidable {
     associatedtype Content: EntityPresentable
     func getAllContent(completion: @escaping ([Content]?) -> Void)
-    func getContent(by id: String, completion: @escaping (Content?) -> Void)
+    func getContent(by id: Int, completion: @escaping (Content?) -> Void)
 }

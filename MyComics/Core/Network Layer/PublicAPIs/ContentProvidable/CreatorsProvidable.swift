@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CreatorsProvidable {
-    func getCreators(by id: String, completion: @escaping ([CreatorEntity]?) -> Void)
+    func getCreators(by id: Int, completion: @escaping ([CreatorEntity]?) -> Void)
 }

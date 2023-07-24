@@ -23,7 +23,7 @@ final class APIRequestConfigurator<T: EntityPresentable> {
     
     func requestEntities<U: EntityPresentable>(
         path: Path,
-        id: String? = nil,
+        id: Int? = nil,
         additionalPath: Path? = nil,
         completion: @escaping ([U]?) -> Void
     ) {
@@ -47,6 +47,15 @@ final class APIRequestConfigurator<T: EntityPresentable> {
         completion: @escaping ([U]?) -> Void
     ) {
         let parameters: RequestParameters = .init(offset: offset, limit: pageLimit)
+        networkService.makeRequestWithParameters(path: path, parameters, completion: completion)
+    }
+    
+    func requestSearchContent<U: EntityPresentable>(
+        path: Path,
+        text: String,
+        completion: @escaping ([U]?) -> Void
+    ) {
+        let parameters: RequestParameters = .init(search: .init(path: path, text: text))
         networkService.makeRequestWithParameters(path: path, parameters, completion: completion)
     }
 }
