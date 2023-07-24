@@ -11,13 +11,13 @@ final class ComicsCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Private properties
     
-    var imageView = AsyncImageView()
-    var titleLabel = UILabel()
-    var authorLabel = UILabel()
+    private var imageView = AsyncImageView()
+    private var titleLabel = UILabel()
+    private var authorLabel = UILabel()
     private var gradientView = UIView()
     private var likeButton = UIButton()
     private var identifier = "ComicsCollectionViewCell"
-    var data: [Model] = []
+    private var data: [Model] = []
     
     // MARK: - Init
     
@@ -90,9 +90,16 @@ private extension ComicsCollectionViewCell {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: imageView.bottomAnchor, constant: -20),
+            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: imageView.bottomAnchor, constant: -40),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)
+        ])
+        
+        authorLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            authorLabel.bottomAnchor.constraint(lessThanOrEqualTo: titleLabel.bottomAnchor, constant: 20),
+            authorLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
+            authorLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)
         ])
     }
     
@@ -118,7 +125,7 @@ private extension ComicsCollectionViewCell {
     func setupAuthorLabel() {
         authorLabel.textAlignment = .center
         authorLabel.textColor = .appTintRed
-        authorLabel.font = .systemFont(ofSize: 14)
+        authorLabel.font = .systemFont(ofSize: 14, weight: .medium)
         authorLabel.numberOfLines = 1
     }
     

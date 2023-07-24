@@ -57,7 +57,7 @@ private extension ComicsDataAdapter {
         let configuredModels: [ComicsPresentableModel] = rawData.compactMap { data in
             return ComicsPresentableModel(
                 title: data.title ?? "",
-                author: "",
+                author: data.creators?.items?.first?.name ?? "",
                 image: .init(
                     imageURL: data.thumbnail?.path,
                     imageExtension: data.thumbnail?.extension
