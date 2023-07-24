@@ -12,4 +12,6 @@ protocol CharactersViewOutput: AnyObject {
     func loadNextPage()
     func didTapLike(_ indexPath: IndexPath)
     func didTapCell(_ indexPath: IndexPath)
+    func searchTextDidChange(_ text: String)
+    func cancelButtonClicked()
 }

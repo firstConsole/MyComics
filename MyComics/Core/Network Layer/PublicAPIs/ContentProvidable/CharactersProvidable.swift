@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CharactersProvidable {
-    func getCharacters(by id: String, completion: @escaping ([CharacterEntity]?) -> Void)
+    func getCharacters(by id: Int, completion: @escaping ([CharacterEntity]?) -> Void)
 }

@@ -16,8 +16,8 @@ enum Path: String {
     case stories
     
     enum Configuration {
-        case id(String)
-        case additionalPath(id: String, path: Path)
+        case id(Int)
+        case additionalPath(id: Int, path: Path)
         case none
     }
 }

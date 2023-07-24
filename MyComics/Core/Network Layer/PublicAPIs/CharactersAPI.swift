@@ -12,4 +12,5 @@ protocol CharactersAPI: ContentProvidable,
                         EventsProvidable,
                         SeriesProvidable,
                         PageableContent,
+                        SearchableContent,
                         StoriesProvidable where Content == CharacterEntity {}
