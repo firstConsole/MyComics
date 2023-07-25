@@ -13,7 +13,7 @@ final class ComicsViewController: UIViewController {
     
     private var presenter: ComicsViewOutput
     private let contentView = ComicsContentView()
-    private let searchController = UISearchController()
+    private let searchController = ComicsSearchController()
 
     // MARK: - Init
     

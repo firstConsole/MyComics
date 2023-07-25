@@ -123,6 +123,9 @@
 		8BDBF7272A6DBC3D00F0CD5E /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBF7262A6DBC3D00F0CD5E /* FirebaseUser.swift */; };
 		8BDBF72A2A6DBECD00F0CD5E /* FirebaseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBF7292A6DBECD00F0CD5E /* FirebaseKeys.swift */; };
 		8BDBF72D2A6DC17900F0CD5E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBF72C2A6DC17900F0CD5E /* UserModel.swift */; };
+		BB13157E2A6FCDA4001DAA43 /* ComicsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13157D2A6FCDA4001DAA43 /* ComicsSearchController.swift */; };
+		BB1315802A6FCE93001DAA43 /* ComicsSearchController+UISearchResultsUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB13157F2A6FCE93001DAA43 /* ComicsSearchController+UISearchResultsUpdater.swift */; };
+		BB1315822A6FD082001DAA43 /* ComicsSearchController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1315812A6FD082001DAA43 /* ComicsSearchController+UISearchBarDelegate.swift */; };
 		BB1B46032A6005EA005C551A /* ComicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46022A6005EA005C551A /* ComicsCollectionViewCell.swift */; };
 		BB1B46052A6014B4005C551A /* ComicsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46042A6014B4005C551A /* ComicsContentView.swift */; };
 		BB1B46082A60311D005C551A /* ComicsContentView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B46072A60311D005C551A /* ComicsContentView+Delegate.swift */; };
@@ -258,6 +261,9 @@
 		8BDBF7262A6DBC3D00F0CD5E /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		8BDBF7292A6DBECD00F0CD5E /* FirebaseKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseKeys.swift; sourceTree = "<group>"; };
 		8BDBF72C2A6DC17900F0CD5E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BB13157D2A6FCDA4001DAA43 /* ComicsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsSearchController.swift; sourceTree = "<group>"; };
+		BB13157F2A6FCE93001DAA43 /* ComicsSearchController+UISearchResultsUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsSearchController+UISearchResultsUpdater.swift"; sourceTree = "<group>"; };
+		BB1315812A6FD082001DAA43 /* ComicsSearchController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsSearchController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		BB1B46022A6005EA005C551A /* ComicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsCollectionViewCell.swift; sourceTree = "<group>"; };
 		BB1B46042A6014B4005C551A /* ComicsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsContentView.swift; sourceTree = "<group>"; };
 		BB1B46072A60311D005C551A /* ComicsContentView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsContentView+Delegate.swift"; sourceTree = "<group>"; };
@@ -904,9 +910,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB13157C2A6FCD71001DAA43 /* ComicsSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				BB13157D2A6FCDA4001DAA43 /* ComicsSearchController.swift */,
+				BB13157F2A6FCE93001DAA43 /* ComicsSearchController+UISearchResultsUpdater.swift */,
+				BB1315812A6FD082001DAA43 /* ComicsSearchController+UISearchBarDelegate.swift */,
+			);
+			path = ComicsSearchController;
+			sourceTree = "<group>";
+		};
 		BB1B45FF2A600599005C551A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BB13157C2A6FCD71001DAA43 /* ComicsSearchController */,
 				BB1B46012A6005AD005C551A /* ContentView */,
 				BB1B46002A6005A7005C551A /* Cell */,
 			);
@@ -1158,9 +1175,12 @@
 				8B72C6D62A4C87D100BFC6DA /* UIViewController+Extension.swift in Sources */,
 				8BDBF7272A6DBC3D00F0CD5E /* FirebaseUser.swift in Sources */,
 				23A8A1972A519007007D09FB /* UIImage + Extensions.swift in Sources */,
+				BB13157E2A6FCDA4001DAA43 /* ComicsSearchController.swift in Sources */,
 				2347CC052A63F77A003CB1CE /* SearchableContent.swift in Sources */,
 				23EF14642A5AC36E00289B09 /* LoadingFooterView.swift in Sources */,
+				BB1315802A6FCE93001DAA43 /* ComicsSearchController+UISearchResultsUpdater.swift in Sources */,
 				23A8A19C2A51905B007D09FB /* AsyncImageView.swift in Sources */,
+				BB1315822A6FD082001DAA43 /* ComicsSearchController+UISearchBarDelegate.swift in Sources */,
 				23A8A13E2A4C9139007D09FB /* CharactersAPIService.swift in Sources */,
 				CECDDBFD2A5C192F006E17EB /* DetailCharacterViewController.swift in Sources */,
 				8BDBF72A2A6DBECD00F0CD5E /* FirebaseKeys.swift in Sources */,

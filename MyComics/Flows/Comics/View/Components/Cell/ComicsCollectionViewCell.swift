@@ -17,7 +17,6 @@ final class ComicsCollectionViewCell: UICollectionViewCell {
     private var gradientView = UIView()
     private var likeButton = UIButton()
     private var identifier = "ComicsCollectionViewCell"
-    private var data: [Model] = []
     
     // MARK: - Init
     
@@ -90,7 +89,7 @@ private extension ComicsCollectionViewCell {
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: imageView.bottomAnchor, constant: -40),
+            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: imageView.bottomAnchor, constant: -30),
             titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
             titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10)
         ])
