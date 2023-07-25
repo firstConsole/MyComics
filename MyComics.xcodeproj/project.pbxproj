@@ -954,6 +954,8 @@
 				BB1B46102A641EAB005C551A /* ComicsDataAdapterProtocol.swift */,
 			);
 			path = Model;
+            sourceTree = "<group>";
+        };
 		CE4BA93F2A61795D00B3D9AE /* Model */ = {
 			isa = PBXGroup;
 			children = (
