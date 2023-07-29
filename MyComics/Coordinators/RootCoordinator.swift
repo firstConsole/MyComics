@@ -19,11 +19,11 @@ final class RootCoordinator {
         
         let charactersViewController = CharactersModuleBuilder.build(charactersNavigationController)
         charactersNavigationController.pushViewController(charactersViewController, animated: false)
-        charactersNavigationController.tabBarItem.image = UIImage(systemName: "bonjour")
+        charactersNavigationController.tabBarItem.image = UIImage(systemName: "aqi.medium")
         charactersNavigationController.tabBarItem.title = LocalizationKeys.localized(.charactersTabItem)
         
         let comicsVC = UINavigationController(rootViewController: ComicsModuleBuilder.build())
-        comicsVC.tabBarItem.image = UIImage(systemName: "book.fill")
+        comicsVC.tabBarItem.image = UIImage(systemName: "magazine")
         comicsVC.tabBarItem.title = LocalizationKeys.localized(.comicsTabItem)
         
         let authNavigationController = UINavigationController()
