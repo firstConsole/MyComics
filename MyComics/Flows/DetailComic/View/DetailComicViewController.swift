@@ -101,6 +101,9 @@ final class DetailComicViewController: UIViewController {
 // MARK: - DetailComicViewInput
 
 extension DetailComicViewController: DetailComicViewInput {
-    func updateView() {
+    func updateView(model: DetailComicModel) {
+        comicTitleLabel.text = model.title
+        comicImageView.asyncImage = model.image
+        comicDescriptionLabel.text = model.description
     }
 }

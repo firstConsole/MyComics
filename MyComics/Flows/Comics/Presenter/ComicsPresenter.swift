@@ -15,12 +15,16 @@ final class ComicsPresenter {
     
     // MARK: - Dependencies
     
-    let dataAdapter: ComicsDataAdapter
+    private let dataAdapter: ComicsDataAdapter
+    private let coordinator: ComicsCoordinator
+    private var isSearching: Bool = false
     
     // MARK: - Init
     
-    init(dataAdapter: ComicsDataAdapter) {
+    init(dataAdapter: ComicsDataAdapter,
+         coordinator: ComicsCoordinator) {
         self.dataAdapter = dataAdapter
+        self.coordinator = coordinator
     }
 }
 
@@ -33,8 +37,6 @@ private extension ComicsPresenter {
                   author: $0.author,
                   image: $0.image)
         }
-        
-        print("(ComicsPresenter): Items updated complete = \(models.count)")
         
         DispatchQueue.main.async { [weak self] in
             guard let self = self else {
@@ -59,9 +61,16 @@ extension ComicsPresenter: ComicsViewOutput {
                 return
             }
             
-            print("(ComicsPresenter): Items updated complete with \(models.count) items")
-            
             self.updateView(with: models)
         }
+    }
+    
+    func didTapCell(_ indexPath: IndexPath) {
+        guard let comicsID = dataAdapter.getComicsID(by: indexPath,
+                                                     isSearching: isSearching) else {
+            return
+        }
+        
+        coordinator.openDetailScreen(comicsID: comicsID)
     }
 }

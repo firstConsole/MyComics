@@ -28,6 +28,6 @@ private extension ComicsSearchController {
     }
     
     func getData() {
-        contentView.
+        
     }
 }

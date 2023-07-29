@@ -9,7 +9,10 @@ import UIKit
 
 final class ComicsContentView: UICollectionView {
     
+    // MARK: - Properties
+    
     var comicsData: [ComicsCollectionViewCell.Model] = []
+    var didTapCell: IndexPathClosure?
     
     // MARK: - init
     
@@ -22,8 +25,6 @@ final class ComicsContentView: UICollectionView {
         
         delegate = self
         dataSource = self
-        
-        print("(ComicsContentView): UICollectionView initialized -> OK")
     }
     
     required init?(coder: NSCoder) {
@@ -36,8 +37,6 @@ extension ComicsContentView {
         let collectionViewLayout = UICollectionViewFlowLayout()
         collectionViewLayout.scrollDirection = .vertical
         
-        print("(ComicsContentView): UICollectionViewFlowLayout configured -> OK")
-        
         return collectionViewLayout
     }
     
@@ -47,8 +46,6 @@ extension ComicsContentView {
                   author: $0.author,
                   image: $0.image)
         }
-        
-        print("(ComicsContentView): Items loaded complete = \(models.count)")
     }
     
     func convertData(models: [ComicsContentView.Model]) -> [ComicsCollectionViewCell.Model] {
@@ -57,5 +54,9 @@ extension ComicsContentView {
                   author: $0.author,
                   image: $0.image)
         }
+    }
+    
+    func setOnCellTapAction(_ action: @escaping IndexPathClosure) {
+        didTapCell = action
     }
 }

@@ -22,7 +22,9 @@ final class RootCoordinator {
         charactersNavigationController.tabBarItem.image = UIImage(systemName: "aqi.medium")
         charactersNavigationController.tabBarItem.title = LocalizationKeys.localized(.charactersTabItem)
         
-        let comicsVC = UINavigationController(rootViewController: ComicsModuleBuilder.build())
+        let comicsNavigationController = UINavigationController()
+        let comicsVC = ComicsModuleBuilder.build(comicsNavigationController)
+        comicsNavigationController.pushViewController(comicsVC, animated: false)
         comicsVC.tabBarItem.image = UIImage(systemName: "magazine")
         comicsVC.tabBarItem.title = LocalizationKeys.localized(.comicsTabItem)
         
@@ -34,7 +36,9 @@ final class RootCoordinator {
         authNavigationController.tabBarItem.title = LocalizationKeys.localized(.profileTabItem)
         
         let tabBarVC = UITabBarController()
-        tabBarVC.viewControllers = [charactersNavigationController, comicsVC, authNavigationController]
+        tabBarVC.viewControllers = [charactersNavigationController,
+                                    comicsNavigationController,
+                                    authNavigationController]
         
         tabBarVC.viewControllers?.forEach {
             if let navigationController = $0 as? UINavigationController {
