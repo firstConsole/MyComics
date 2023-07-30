@@ -61,4 +61,4 @@ MyComics - это приложение, которое позволяет люб
 <a href="https://github.com/KopytinKa">Кирилл</a>\
 <a href="https://github.com/Zentaur0">Антон</a>\
 <a href="https://github.com/AndreyPiskunov">Андрей</a>\
-<a href="https://github.com/firstConsole">Алексей</a>\
+<a href="https://github.com/firstConsole">Алексей</a>
