@@ -17,9 +17,7 @@ MyComics - это приложение, которое позволяет люб
 
 ## Видеофрагменты
 
-<p align="center">
 ![preview](https://github.com/firstConsole/MyComics/assets/94192633/09ae85bb-138d-45eb-a435-df8e3179b511)
-</p>
 
 ## Функции
 
